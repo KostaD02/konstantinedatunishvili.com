@@ -7,10 +7,6 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  eleventyConfig.setBrowserSyncConfig({
-    files: "./public/styles/**/*.css",
-  });
-
   return {
     dir: {
       input: "src",

@@ -1,0 +1,32 @@
+/* Colors */
+
+$navy-color: #0a192f;
+$navy-color-alpha: #0a192fd9;
+$light-navy-color: #112240;
+$lightest-navy-color: #233554;
+$slate-color: #8892b0;
+$light-slate-color: #a8b2d1;
+$lightest-slate-color: #ccd6f6;
+$white-color: #e6f1ff;
+$green-color: #64ffda;
+
+/* Fonts */
+
+$primary-font: "Raleway", sans-serif;
+$secondary-font: "Poppins", sans-serif;
+$font-size-xxs: 12px;
+$font-size-xs: 13px;
+$font-size-sm: 14px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-xxl: 22px;
+$font-size-heading: 32px;
+
+/* Others */
+
+$border: 1px solid $green-color;
+$border-radius: 4px;
+$transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+$box-shadow: 3px 3px 0 0 $green-color;
+$transform: translate(-4px, -4px);

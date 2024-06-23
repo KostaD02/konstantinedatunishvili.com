@@ -1,4 +1,29 @@
+@use "./variables" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0px;
+  padding: 0px;
+  background-color: $navy-color;
+  font-family: $secondary-font;
+  font-size: $font-size-xl;
+  color: $slate-color;
+  line-height: 1.3;
+}
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 16px;
+  box-sizing: border-box;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
