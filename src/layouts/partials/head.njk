@@ -1,0 +1,32 @@
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>{{ title | default('Home') }} | Konstantine Datunishvili</title>
+  <meta name="title" content="{{ title | default('Konstantine Datunishvili - Portfolio') }}"/>
+  <meta name="description" content="{{ description | default('Personal Website') }}"/>
+  <meta
+    name="keywords"
+    content="konstantine, datunishvili, konstantine datunishvili, kosta, kosta datunishvili, კონსტანტინე,დათუნიშვილი,
+      კონსტანტინე დათუნიშვილი, კოსტა დათუნიშვილი, {{ keywords | default('') }}"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://konstantinedatunishvili.com/"/>
+  <meta property="og:title" content="{{ title | default('Konstantine Datunishvili - Portfolio') }}"/>
+  <meta property="og:description" content="{{ description | default('Personal Website') }}"/>
+  <meta property="og:image" content="https://i.postimg.cc/KYXbYfpY/logo-500x500.png"/>
+  <meta property="twitter:card" content="summary_large_image"/>
+  <meta property="twitter:url" content="https://konstantinedatunishvili.com/"/>
+  <meta property="twitter:title" content="{{ title | default('Konstantine Datunishvili - Portfolio') }}"/>
+  <meta property="twitter:description" content="{{ description | default('Personal Website') }}"/>
+  <meta property="twitter:image" content="https://i.postimg.cc/KYXbYfpY/logo-500x500.png"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600;700;900&display=swap"
+    rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;700&display=swap" rel="stylesheet"/>
+  <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico"/>
+  <link rel="stylesheet" href="/styles/style.css"/>
+  {% if page.url === "/" %}
+    <link rel="stylesheet" href="/styles/home.css"/>
+  {% endif %}
+</head>

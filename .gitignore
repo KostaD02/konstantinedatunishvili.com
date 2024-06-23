@@ -1,0 +1,12 @@
+# module
+
+node_modules
+
+# compiled
+
+public
+
+# style
+
+src/styles/*.css
+src/styles/*.css.map

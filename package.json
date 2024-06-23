@@ -1,0 +1,21 @@
+{
+  "name": "konstantinedatunishvili.com",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm-run-all build:sass --parallel watch:*",
+    "build": "npm-run-all build:*",
+    "build:sass": "sass src/styles --style compressed",
+    "watch:sass": "sass --watch src/styles --style compressed",
+    "build:eleventy": "eleventy",
+    "watch:eleventy": "eleventy --serve"
+  },
+  "author": "Konstantine datunishvili",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.77.6"
+  }
+}
