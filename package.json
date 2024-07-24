@@ -15,10 +15,8 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "eleventy-sass": "^2.2.4",
     "npm-run-all": "^4.1.5",
     "sass": "^1.77.6"
-  },
-  "dependencies": {
-    "eleventy-sass": "^2.2.4"
   }
 }
