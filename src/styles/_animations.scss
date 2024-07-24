@@ -1,0 +1,49 @@
+@use "./variables" as *;
+
+@keyframes drop-item {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    backdrop-filter: blur(0px);
+    background-color: transparent;
+  }
+  100% {
+    backdrop-filter: blur(3px);
+    background-color: $navy-color-alpha;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    backdrop-filter: blur(3px);
+  }
+  100% {
+    backdrop-filter: blur(0px);
+    background-color: transparent;
+  }
+}

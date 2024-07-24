@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+@mixin icon($height, $width) {
+  transition-duration: 0.5s;
+  position: absolute;
+  height: $height;
+  width: $width;
+  top: 15px;
+  background-color: $green-color;
+}
+
+@mixin icon-before($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $green-color;
+  content: "";
+  top: $top;
+  left: 0px;
+}
+
+@mixin icon-after($height, $width, $top) {
+  transition-duration: 0.5s;
+  position: absolute;
+  width: $width;
+  height: $height;
+  background-color: $green-color;
+  content: "";
+  top: $top;
+  left: 0px;
+}
+
+@mixin navigation-item() {
+  padding: 10px;
+  display: inline-block;
+  text-decoration: none;
+  text-decoration-skip-ink: auto;
+  font-size: $font-size-xs;
+  font-family: $secondary-font;
+  color: $lightest-slate-color;
+  transition: $transition;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+}

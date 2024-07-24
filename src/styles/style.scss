@@ -1,4 +1,7 @@
 @use "./variables" as *;
+@use "./mixins" as *;
+@use "./animations" as *;
+@use "./header" as *;
 
 html {
   scroll-behavior: smooth;
@@ -12,14 +15,21 @@ body {
   font-size: $font-size-xl;
   color: $slate-color;
   line-height: 1.3;
+  height: 200vh; // TODO: REMOVE IT LATER
 }
 
 main {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  padding: 50px 16px;
+  padding: 100px 16px 15px;
   box-sizing: border-box;
+  position: relative;
+  z-index: 50;
+
+  &.hide {
+    z-index: -1;
+  }
 }
 
 .flex-center {
