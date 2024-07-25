@@ -9,4 +9,30 @@
       }
     }
   }
+
+  footer {
+    position: static;
+
+    .socials {
+      position: static;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 0px 30px;
+      margin-top: 10px;
+
+      ul {
+        width: fit-content;
+        flex-direction: row;
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    .contact__gmail {
+      display: none;
+    }
+  }
 }
