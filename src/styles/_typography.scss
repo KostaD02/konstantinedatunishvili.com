@@ -48,7 +48,6 @@ button {
   text-decoration: none;
   transition: $transition;
   display: inline-block;
-  user-select: none;
   cursor: pointer;
 }
 
@@ -60,6 +59,10 @@ a:focus-visible {
 }
 
 a.external {
+  line-height: normal;
+  padding: 0;
+  border: none;
+  border-radius: none;
   text-decoration-skip-ink: auto;
   position: relative;
 
@@ -79,6 +82,8 @@ a.external {
   &:hover,
   &:focus-visible {
     outline: none;
+    box-shadow: none;
+    transform: none;
 
     &::after {
       transform: scaleX(1);

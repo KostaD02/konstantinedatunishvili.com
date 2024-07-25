@@ -23,10 +23,13 @@ main {
   width: 100%;
   max-width: 1000px;
   margin: auto;
-  padding: 100px 16px 15px;
+  padding: 100px 75px 15px;
   box-sizing: border-box;
   position: relative;
   z-index: 50;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 
   &.hide {
     z-index: -1;

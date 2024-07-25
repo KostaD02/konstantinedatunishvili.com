@@ -1,8 +1,28 @@
 function init() {
   const header = document.querySelector("header");
   const menu = document.querySelector("button.menu");
+  const skips = document.querySelectorAll("a.skip");
 
   let lastScrollPos = 0;
+
+  menu.addEventListener("click", handleMenuClick);
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleResize);
+
+  skips.forEach((skip) => {
+    skip.addEventListener("keyup", handleSkip);
+  });
+
+  function handleSkip(event) {
+    if (event.code === "Space" || event.code === "Enter") {
+      setTimeout(() => {
+        event.target.blur();
+        if (event.code === "Space") {
+          window.location.href = event.target.href;
+        }
+      }, 500);
+    }
+  }
 
   function handleScroll() {
     const scrollPosition = document.documentElement.scrollTop;
@@ -64,10 +84,6 @@ function init() {
     document.body.style.overflow = "auto";
     header.classList.remove("hide-colors");
   }
-
-  menu.addEventListener("click", handleMenuClick);
-  window.addEventListener("scroll", handleScroll);
-  window.addEventListener("resize", handleResize);
 }
 
 window.addEventListener("DOMContentLoaded", init);

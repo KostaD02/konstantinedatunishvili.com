@@ -98,7 +98,7 @@ header {
             color: $green-color;
           }
 
-          &:focus-visible {
+          &:not(.resume):focus-visible {
             outline: 2px dashed $green-color;
             outline-offset: 3px;
             box-shadow: none;
@@ -255,7 +255,7 @@ header {
           transform: none;
         }
 
-        &:focus-visible {
+        &:not(.resume):focus-visible {
           outline: 2px dashed $green-color;
           outline-offset: 3px;
           box-shadow: none;

@@ -1,0 +1,42 @@
+@use "./variables" as *;
+@use "./animations" as *;
+
+section {
+  &.intro {
+    max-width: 600px;
+    margin: auto;
+
+    h1,
+    h2,
+    p {
+      font-family: $primary-font;
+      margin: 0;
+    }
+
+    h3 {
+      font-weight: 400;
+      font-size: clamp($font-size-sm, 8vw, $font-size-md);
+      color: $green-color;
+      animation: fade-up 1000ms ease;
+    }
+
+    h1 {
+      font-size: clamp(40px, 5vw, 60px);
+      animation: fade-up 1200ms ease;
+    }
+
+    h2 {
+      color: $slate-color;
+      font-size: clamp(40px, 5vw, 60px);
+      animation: fade-up 1400ms ease;
+    }
+
+    p {
+      margin: 10px 0 0;
+      font-size: $font-size-md;
+      font-family: $secondary-font;
+      line-height: 1.5;
+      animation: fade-up 1600ms ease;
+    }
+  }
+}

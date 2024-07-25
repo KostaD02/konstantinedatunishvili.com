@@ -79,6 +79,8 @@ footer {
           &:focus-visible {
             outline: 2px dashed $green-color;
             outline-offset: 3px;
+            box-shadow: none;
+            transform: none;
           }
         }
       }

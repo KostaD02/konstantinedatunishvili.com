@@ -38,6 +38,15 @@
   }
 }
 
+@keyframes fade-up {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes fade-out {
   0% {
     backdrop-filter: blur(3px);
