@@ -30,6 +30,7 @@ main {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1rem;
+  place-items: center;
 
   &.hide {
     z-index: -1;
@@ -38,7 +39,8 @@ main {
   section {
     width: 100%;
     position: relative;
-    padding: 50px 0;
+    padding: 100px 0;
+    margin: auto;
 
     &.full-size {
       height: calc(100vh - 100px - 15px);
@@ -75,4 +77,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.hidden {
+  display: none;
+  visibility: hidden;
+  overflow: hidden;
+  opacity: 0;
+  font-size: 0;
+  color: transparent;
+  background-color: transparent;
 }

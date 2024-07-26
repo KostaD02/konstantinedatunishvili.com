@@ -56,6 +56,47 @@
       .header-text {
         font-size: clamp(20px, 5vw, $font-size-heading);
       }
+
+      &.experience {
+        .jobs {
+          display: grid;
+          row-gap: 15px;
+
+          ::-webkit-scrollbar {
+            width: 4px;
+          }
+
+          ::-webkit-scrollbar-thumb {
+            transition: $transition;
+          }
+
+          ::-webkit-scrollbar-thumb:hover,
+          ::-webkit-scrollbar-thumb:active {
+            background-color: $green-color;
+          }
+
+          &__tabs {
+            width: 100%;
+            display: flex;
+            overflow-x: auto;
+            padding-bottom: 10px;
+
+            button {
+              width: 100%;
+              text-align: center;
+              justify-content: center;
+              padding: 0px 15px;
+              border: 0px;
+              border-bottom: 2px solid $light-navy-color;
+            }
+
+            button.active {
+              border: 0px;
+              border-bottom: 2px solid $green-color;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -18,7 +18,7 @@ layout: "base.njk"
 </section>
 <section id="about" class="about">
   <article>
-    <h2 class="header-text">About me</h2>
+    <h2 class="header-text">About Me</h2>
     <p>
       Hello, i am Konstantine Datunishvili, a Senior Software Developer. I have a passion for creating intuitive user
       interfaces via Angular.
@@ -35,23 +35,62 @@ layout: "base.njk"
     </p>
     <p>Here are a few technologies I've been working with recently:</p>
     <ul class="list">
-      <li>HTML / MD / HBS / NJK</li>
-      <li>CSS / SCSS / SASS / LESS</li>
-      <li>JavaScript (ES6+)</li>
-      <li>TypeScript</li>
-      <li>Angular</li>
-      <li>RxJS</li>
-      <li>Nx</li>
-      <li>11ty</li>
-      <li>Node.js</li>
-      <li>Cordova</li>
-      <li>Express.js</li>
-      <li>Nest.js</li>
-      <li>MongoDB</li>
-      <li>Socket.io</li>
+      {% for skill in skills %}
+        <li>{{ skill }}</li>
+      {% endfor %}
     </ul>
   </article>
   <aside>
-    <img src="./assets/images/personal_image.png" alt="Konstantine Datunishvili image">
+    <img src="./assets/images/personal_image.png" alt="Konstantine Datunishvili image"/>
   </aside>
+</section>
+<section id="experience" class="experience">
+  <h2 class="header-text">Where I've Worked</h2>
+  <div class="jobs">
+    <div class="jobs__tabs">
+      {% for experience in experiences %}
+        <button data-experience-index="{{ loop.index }}">
+          {{ experience.name }}
+        </button>
+        <div class="hidden" hidden data-experience="{{ loop.index }}">
+          <span class="hidden" hidden data-name="name">{{ experience.name }}</span>
+          <span class="hidden" hidden data-name="position">{{ experience.position }}</span>
+          <span class="hidden" hidden data-name="startDate">{{ experience.startDate }}</span>
+          <span class="hidden" hidden data-name="endDate">{{ experience.endDate }}</span>
+          <span class="hidden" hidden data-name="url">{{ experience.url }}</span>
+          {% for description in experience.descriptions %}
+            <span class="hidden" hidden data-name="descriptions">{{ description }}</span>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+    <div class="jobs__description" id="job_description">
+      <div class="jobs__description__header">
+        <h3>Senior Front-End Developer
+          <span>
+            <a class="external" target="_blank" href="https://www.etoro.com/">
+              eToro
+            </a>
+          </span>
+        </h3>
+        <p>May 2024 - Present</p>
+      </div>
+      <div class="jobs__description__details">
+        <ul class="list">
+          <li>
+            <span>Improving and maintaining one of the world’s leading broker platforms.</span>
+          </li>
+          <li>
+            <span>Working back-to-back with the designers, product managers, and analysts to deliver new features.</span>
+          </li>
+          <li>
+            <span>Delivering impactful A/B tests, neatly measured with analytics.</span>
+          </li>
+          <li>
+            <span>Enhancing our codebase with Angular and Nx, and extending applications to mobile platforms using Cordova.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>

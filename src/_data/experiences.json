@@ -1,0 +1,52 @@
+[
+  {
+    "name": "eToro",
+    "position": "Senior Front-End Developer",
+    "startDate": "May 2024",
+    "endDate": "Present",
+    "url": "https://www.etoro.com/",
+    "descriptions": [
+      "Improving and maintaining one of the world’s leading broker platforms.",
+      "Working back-to-back with the designers, product managers, and analysts to deliver new features.",
+      "Delivering impactful A/B tests, neatly measured with analytics.",
+      "Enhancing our codebase with Angular and Nx, and extending applications to mobile platforms using Cordova."
+    ]
+  },
+  {
+    "name": "Academy IT Step",
+    "position": "Lecturer",
+    "startDate": "Sep 2021",
+    "endDate": "Sep 2024",
+    "url": "https://www.etoro.com/",
+    "descriptions": [
+      "As a Lecturer specializing in front-end development, I conduct live sessions for students on Microsoft Teams. All sessions are recorded for students to review at their convenience.",
+      "I cover topics such as HTML, CSS, SCSS, Bootstrap, JavaScript, SweetAlert, Angular, Angular Material, and provide a brief introduction to RxJS.",
+      "Working closely with the management to improve the teaching process.",
+      "Completely revamping the front-end syllabus based on modern technological trends and demands."
+    ]
+  },
+  {
+    "name": "Payever",
+    "position": "Front-End Developer",
+    "startDate": "Oct 2022",
+    "endDate": "Jan 2023",
+    "url": "https://payever.org/",
+    "descriptions": [
+      "I was developing and maintain frontend applications based on Angular.",
+      "Developed UI/UX features in Angular as described and displayed in the graphical design, ensure and advice on the technical feasibility of the UI/UX designs.",
+      "Optimize applications for scalability, cross-browser, cross-device and built reusable code for future use.",
+      "Work products were written in HTML5, SCSS, Angular and Nx."
+    ]
+  },
+  {
+    "name": "Freelance",
+    "position": "Freelance projects",
+    "startDate": "Mar 2021",
+    "endDate": "Present",
+    "url": null,
+    "descriptions": [
+      "I am an experienced Full-stack developer specializing in Angular for Front-end development and Node.js with Express and MongoDB for Back-end development.",
+      "With a proven track record of successfully delivering projects, I have worked on various assignments creating dynamic user interfaces and implementing efficient data storage solutions."
+    ]
+  }
+]
