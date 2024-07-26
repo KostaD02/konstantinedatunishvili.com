@@ -3,9 +3,14 @@ const wordsToUpdate = ["create", "maintain", "develop"];
 
 const animationMs = 5000;
 
-setInterval(updateWord, animationMs);
+const interval = setInterval(updateWord, animationMs);
 
 function updateWord() {
+  if (!updateWordRef) {
+    clearInterval(interval);
+    return;
+  }
+
   const previousWord = updateWordRef.textContent;
   let newWord = wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
 

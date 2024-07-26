@@ -1,3 +1,5 @@
+@use "./variables" as *;
+
 @media screen and (max-width: 768px) {
   header {
     nav.flex-center {
@@ -6,6 +8,17 @@
       }
       div.burger {
         display: block;
+      }
+    }
+  }
+
+  main {
+    padding: 50px;
+
+    section {
+      &.about {
+        grid-template-columns: 1fr;
+        place-items: center;
       }
     }
   }
@@ -33,6 +46,78 @@
 
     .contact__gmail {
       display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    section {
+      .header-text {
+        font-size: clamp(20px, 5vw, $font-size-heading);
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  main {
+    padding: 25px;
+
+    section {
+      &.about {
+        article {
+          p {
+            font-size: $font-size-lg;
+          }
+          ul {
+            grid-template-columns: 1fr;
+          }
+        }
+        aside {
+          &::before {
+            height: 200px;
+          }
+
+          img {
+            width: 200px;
+            height: 200px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 350px) {
+  main {
+    padding: 25px;
+
+    section {
+      .header-text {
+        font-size: clamp(18px, 5vw, $font-size-heading) !important;
+      }
+
+      &.about {
+        article {
+          p {
+            font-size: $font-size-lg;
+          }
+          ul {
+            grid-template-columns: 1fr;
+          }
+        }
+        aside {
+          &::before {
+            height: 150px;
+          }
+
+          img {
+            width: 150px;
+            height: 150px;
+          }
+        }
+      }
     }
   }
 }
