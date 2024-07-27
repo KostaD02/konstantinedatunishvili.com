@@ -162,8 +162,7 @@ layout: "base.njk"
                     stroke="#8892b0"
                     stroke-width="2"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="feather feather-external-link">
+                    stroke-linejoin="round">
                     <title>External Link</title>
                     <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                     <polyline points="15 3 21 3 21 9"></polyline>
@@ -209,4 +208,8 @@ layout: "base.njk"
     <a href="/archive">View Archive</a>
   </div>
 </section>
-<section class="contact" id="contact"></section>
+<section class="contact" id="contact">
+  <h2 class="header-text">Get In Touch</h2>
+  <p>My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+  <a href="mailto:{{ consts.email }}">Contact Me</a>
+</section>

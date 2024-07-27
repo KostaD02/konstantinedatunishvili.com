@@ -117,6 +117,14 @@
           }
         }
       }
+
+      &.contact {
+        padding: 80px 0px;
+
+        p {
+          font-size: 16px;
+        }
+      }
     }
   }
 
@@ -270,8 +278,6 @@
 
 @media screen and (max-width: 350px) {
   main {
-    padding: 25px;
-
     section {
       .header-text {
         font-size: clamp(18px, 5vw, $font-size-heading) !important;

@@ -494,4 +494,28 @@ section {
       }
     }
   }
+
+  &.contact {
+    max-width: 600px;
+    text-align: center;
+    padding: 100px 0px 150px;
+
+    h2.header-text {
+      font-size: clamp(30px, 5vw, 50px);
+      justify-content: center;
+      margin: 10px 0px;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    a {
+      margin-top: 25px;
+    }
+  }
 }
