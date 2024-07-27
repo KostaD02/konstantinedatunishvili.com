@@ -76,6 +76,35 @@
         grid-template-columns: 1fr;
         place-items: center;
       }
+
+      &.archive {
+        h1 {
+          padding-left: 10px;
+        }
+
+        p.subtitle {
+          padding-left: 10px;
+        }
+
+        table {
+          .hide-mobile {
+            display: none;
+          }
+
+          th:first-child,
+          td:first-child {
+            padding-left: 10px;
+          }
+          th:last-child,
+          td:last-child {
+            padding-right: 10px;
+          }
+          td.year {
+            padding-right: 10px;
+            font-size: $font-size-sm;
+          }
+        }
+      }
     }
   }
 
@@ -206,6 +235,23 @@
           }
         }
       }
+
+      &.archive {
+        table {
+          thead {
+            tr {
+              th {
+                font-size: $font-size-sm;
+              }
+            }
+          }
+          tbody {
+            td.title {
+              font-size: $font-size-sm;
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -250,6 +296,11 @@
             }
           }
         }
+      }
+
+      &.archive {
+        max-width: 100%;
+        overflow-x: auto;
       }
     }
   }

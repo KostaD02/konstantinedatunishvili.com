@@ -6,8 +6,8 @@
   "scripts": {
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
-    "build:sass": "sass src/styles --style compressed",
-    "watch:sass": "sass --watch src/styles --style compressed",
+    "build:sass": "sass src/styles --style compressed --no-source-map",
+    "watch:sass": "sass --watch src/styles --style compressed --no-source-map",
     "build:eleventy": "eleventy",
     "watch:eleventy": "eleventy --serve"
   },

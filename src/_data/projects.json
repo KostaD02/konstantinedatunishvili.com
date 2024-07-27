@@ -21,40 +21,6 @@
     "show_in_noteworthy_projects": true
   },
   {
-    "name": "Shop loyalty",
-    "description": "Shop website where convenience meets savings! Simply scan QR codes, proceed to checkout, and unlock discounts later on.",
-    "year": 2024,
-    "made_at": null,
-    "url": {
-      "live": "https://shoployalty.konstantinedatunishvili.com/",
-      "github": "https://github.com/KostaD02/ShopLoyalty"
-    },
-    "stacks": [
-      "Angular",
-      "Angular material",
-      "SCSS",
-      "RxJS",
-      "SweetAlert2",
-      "Nest.js",
-      "MongoDB",
-      "JWT"
-    ],
-    "show_in_noteworthy_projects": true
-  },
-  {
-    "name": "NgxCubeLoader",
-    "description": "Customizable Angular cube loader with prebuilt themes.",
-    "year": 2024,
-    "made_at": null,
-    "url": {
-      "live": "https://kostad02.github.io/NgxCubeLoader/",
-      "github": "https://github.com/KostaD02/NgxCubeLoader",
-      "npm": "https://www.npmjs.com/package/ngx-cube-loader"
-    },
-    "stacks": ["Angular", "Lib"],
-    "show_in_noteworthy_projects": true
-  },
-  {
     "name": "Algorithms",
     "description": "Most basic algorithms are wrapped in a single code for JavaScript. Includes sorting and search algorithms.",
     "year": 2023,
@@ -99,6 +65,40 @@
     },
     "stacks": ["Angular", "Typescript", "Nx", "Cordova"],
     "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Shop loyalty",
+    "description": "Shop website where convenience meets savings! Simply scan QR codes, proceed to checkout, and unlock discounts later on.",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "live": "https://shoployalty.konstantinedatunishvili.com/",
+      "github": "https://github.com/KostaD02/ShopLoyalty"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "RxJS",
+      "SweetAlert2",
+      "Nest.js",
+      "MongoDB",
+      "JWT"
+    ],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "NgxCubeLoader",
+    "description": "Customizable Angular cube loader with prebuilt themes.",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/NgxCubeLoader/",
+      "github": "https://github.com/KostaD02/NgxCubeLoader",
+      "npm": "https://www.npmjs.com/package/ngx-cube-loader"
+    },
+    "stacks": ["Angular", "Lib"],
+    "show_in_noteworthy_projects": true
   },
   {
     "name": "Color utils",
@@ -161,8 +161,8 @@
   {
     "name": "QA exercise",
     "description": null,
-    "year": 2024,
-    "made_at": "Educata",
+    "year": 2023,
+    "made_at": null,
     "url": {
       "live": "https://qa.konstantinedatunishvili.com/sign-in",
       "github": "https://github.com/KostaD02/QA-Exercise"
