@@ -21,7 +21,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1250px;
   margin: auto;
   padding: 100px 90px 50px;
   box-sizing: border-box;
@@ -87,4 +87,8 @@ main {
   font-size: 0;
   color: transparent;
   background-color: transparent;
+}
+
+.mt-3 {
+  margin-top: 3rem;
 }

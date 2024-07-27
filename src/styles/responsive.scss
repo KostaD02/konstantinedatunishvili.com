@@ -1,5 +1,17 @@
 @use "./variables" as *;
 
+@media (max-width: 1080px) {
+  main {
+    section {
+      &.noteworthy-projects {
+        .projects-list {
+          grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 945px) {
   main {
     section {
@@ -301,6 +313,12 @@
       &.archive {
         max-width: 100%;
         overflow-x: auto;
+      }
+
+      &.note-worthy-projects {
+        .projects-list {
+          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        }
       }
     }
   }
