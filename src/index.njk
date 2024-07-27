@@ -16,7 +16,7 @@ layout: "base.njk"
     </p>
   </article>
 </section>
-<section id="about" class="about">
+<section id="about" class="about" data-aos="slide-up" data-aos-duration="1000">
   <a class="skip" href="/#experience">Skip to experience</a>
   <article>
     <h2 class="header-text">About Me</h2>
@@ -45,7 +45,7 @@ layout: "base.njk"
     <img src="./assets/images/personal_image.png" alt="Konstantine Datunishvili image"/>
   </aside>
 </section>
-<section id="experience" class="experience">
+<section id="experience" class="experience" data-aos="slide-up" data-aos-duration="1000">
   <a class="skip" href="/#projects">Skip to work</a>
   <h2 class="header-text">Where I've Worked</h2>
   <div class="jobs">
@@ -101,7 +101,7 @@ layout: "base.njk"
   <h2 class="header-text">Some Things I've Built</h2>
   <div class="projects_list">
     {% for work in works %}
-      <article class="project {% if loop.index % 2 === 0 %}right{% endif %}">
+      <article class="project {% if loop.index % 2 === 0 %}right{% endif %}" data-aos="slide-up" data-aos-duration="1000">
         <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}" class="external_image" style="background-image: url('{{ work.backgroundUrl }}')"></a>
         <aside class="content">
           <p class="tag">{{ work.type }}</p>
@@ -125,7 +125,7 @@ layout: "base.njk"
 <section class="noteworthy-projects" id="noteworthy-projects">
   <a class="skip" href="/#noteworthy-projects">Skip to contact</a>
   <h2 class="header-text">Other Noteworthy Projects</h2>
-  <article class="projects-list">
+  <article class="projects-list" data-aos="slide-up" data-aos-duration="1000">
     {% for project in projects | aFilter("show_in_noteworthy_projects") %}
       <div class="project" tabindex="1">
         <div class="project__side">
@@ -208,7 +208,7 @@ layout: "base.njk"
     <a href="/archive">View Archive</a>
   </div>
 </section>
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-aos="slide-up" data-aos-duration="2000">
   <h2 class="header-text">Get In Touch</h2>
   <p>My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
   <a href="mailto:{{ consts.email }}">Contact Me</a>

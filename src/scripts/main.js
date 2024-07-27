@@ -1,4 +1,6 @@
 function initMainJs() {
+  initAOS();
+
   const header = document.querySelector("header");
   const menu = document.querySelector("button.menu");
   const skips = document.querySelectorAll("a.skip");
@@ -83,6 +85,18 @@ function initMainJs() {
 
     document.body.style.overflow = "auto";
     header.classList.remove("hide-colors");
+  }
+
+  function initAOS() {
+    try {
+      AOS.init({
+        once: true,
+      });
+    } catch (err) {
+      // ? If AOS is not loaded, remove the CSS file otherwise it will mess up positions
+      document.querySelector("#aos-css").remove();
+      console.log("Cannot init AOS, no animation on scroll :(");
+    }
   }
 }
 
