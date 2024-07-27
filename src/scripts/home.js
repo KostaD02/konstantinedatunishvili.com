@@ -96,7 +96,6 @@ function initExperienceSwipe() {
         button.classList.remove("active");
       });
       this.classList.add("active");
-      this.scrollIntoView({ behavior: "smooth" });
     });
     if (index === 0) {
       button.click();

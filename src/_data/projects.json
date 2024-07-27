@@ -1,0 +1,486 @@
+[
+  {
+    "name": "Iswavle (archived)",
+    "description": "This was base version of current Iswavle before rebuild.",
+    "year": 2023,
+    "made_at": null,
+    "url": {
+      "live": "https://iswavle.web.app/",
+      "github": "https://github.com/KostaD02/iswavle"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "RxJS",
+      "SSR",
+      "SweetAlert2",
+      "Express",
+      "MongoDB"
+    ],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Shop loyalty",
+    "description": "Shop website where convenience meets savings! Simply scan QR codes, proceed to checkout, and unlock discounts later on.",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "live": "https://shoployalty.konstantinedatunishvili.com/",
+      "github": "https://github.com/KostaD02/ShopLoyalty"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "RxJS",
+      "SweetAlert2",
+      "Nest.js",
+      "MongoDB",
+      "JWT"
+    ],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "NgxCubeLoader",
+    "description": "Customizable Angular cube loader with prebuilt themes.",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/NgxCubeLoader/",
+      "github": "https://github.com/KostaD02/NgxCubeLoader",
+      "npm": "https://www.npmjs.com/package/ngx-cube-loader"
+    },
+    "stacks": ["Angular", "Lib"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Algorithms",
+    "description": "Most basic algorithms are wrapped in a single code for JavaScript. Includes sorting and search algorithms.",
+    "year": 2023,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/algorithms"
+    },
+    "stacks": ["Algorithms", "JavaScript", "Node.js"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Realtime Chat",
+    "description": "Join our real-time chat platform to connect instantly with others in general or specialized groups.",
+    "year": 2023,
+    "made_at": null,
+    "url": {
+      "live": "https://chat.konstantinedatunishvili.com/",
+      "github": "https://github.com/KostaD02/Realtime-Chat"
+    },
+    "stacks": ["Angular", "SCSS", "Firebase"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Qr read & write",
+    "description": "Generate QR code with or without an image, or read a QR image.",
+    "year": 2023,
+    "made_at": null,
+    "url": {
+      "live": "https://qr.konstantinedatunishvili.com/",
+      "github": "https://github.com/KostaD02/QR-read-write"
+    },
+    "stacks": ["Angular", "SCSS", "QR"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "eToro",
+    "description": null,
+    "year": 2024,
+    "made_at": "eToro",
+    "url": {
+      "live": "https://www.etoro.com/"
+    },
+    "stacks": ["Angular", "Typescript", "Nx", "Cordova"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Color utils",
+    "description": null,
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Color-Utils",
+      "npm": "https://www.npmjs.com/package/@kostad/color-utils"
+    },
+    "stacks": ["TypeScript", "Lib"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Iswavle",
+    "description": null,
+    "year": 2024,
+    "made_at": "Educata",
+    "url": {
+      "live": "https://iswavle.com/",
+      "github": "https://github.com/educata/iswavle"
+    },
+    "stacks": ["Angular", "Ng-Zorro", "RxJS", "SSR", "SSG", "md"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "EverREST - learn Backend",
+    "description": null,
+    "year": 2023,
+    "made_at": "Educata",
+    "url": {
+      "live": "https://everrest.educata.dev/",
+      "github": "https://github.com/educata/everrest",
+      "swagger": "https://api.everrest.educata.dev/swagger"
+    },
+    "stacks": ["Nest.js", "MongoDB", "mdBook", "socket.io", "JWT"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Kvlividze - Learn georgian",
+    "description": null,
+    "year": 2023,
+    "made_at": "Freelance",
+    "url": {
+      "live": "https://kvlividze.com/"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "RxJS",
+      "SweetAlert2",
+      "i18n",
+      "Express",
+      "MongoDB",
+      "JWT"
+    ],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "QA exercise",
+    "description": null,
+    "year": 2024,
+    "made_at": "Educata",
+    "url": {
+      "live": "https://qa.konstantinedatunishvili.com/sign-in",
+      "github": "https://github.com/KostaD02/QA-Exercise"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "Firebase",
+      "SweetAlert2"
+    ],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Payever components",
+    "description": null,
+    "year": 2023,
+    "made_at": "Payever",
+    "url": {
+      "live": "https://commerceos.payever.org/"
+    },
+    "stacks": ["Angular", "SCSS", "RxJS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Ravillas apartments",
+    "description": null,
+    "year": 2023,
+    "made_at": "Freelance",
+    "url": {},
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SCSS",
+      "Firebase",
+      "SweetAlert2"
+    ],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Sliding Puzzle game",
+    "description": null,
+    "year": 2023,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Sliding-Puzzle-Game-JS/",
+      "github": "https://github.com/KostaD02/Sliding-Puzzle-Game-JS"
+    },
+    "stacks": ["HTML", "CSS", "JS", "SweetAlert2"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Memory card game",
+    "description": null,
+    "year": 2022,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Memory-Card-Game-JS/",
+      "github": "https://github.com/KostaD02/Memory-Card-Game-JS"
+    },
+    "stacks": ["HTML", "CSS", "JS", "SweetAlert2"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Color game",
+    "description": null,
+    "year": 2022,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Memory-Card-Game-JS/",
+      "github": "https://github.com/KostaD02/Color-Game-JS"
+    },
+    "stacks": ["HTML", "CSS", "JS", "SweetAlert2"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Registry imdo",
+    "description": null,
+    "year": 2022,
+    "made_at": "Freelance",
+    "url": {
+      "live": "https://registryimdo.org/"
+    },
+    "stacks": [
+      "Angular",
+      "Angular material",
+      "SweetAlert2",
+      "Express",
+      "MongoDB"
+    ],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "QR Project landing page",
+    "description": null,
+    "year": 2022,
+    "made_at": "University",
+    "url": {
+      "live": "https://kostad02.github.io/QR-Project/",
+      "github": "https://github.com/KostaD02/QR-Project"
+    },
+    "stacks": ["HTML", "CSS", "bootstrap", "JS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Simple CRUD for Authentication",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "swagger": "https://app.swaggerhub.com/apis-docs/KostaD02/AuthSimpleApi/0.1/"
+    },
+    "stacks": ["Node.js", "Express", "MongoDB", "CORS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Quiz me",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "live": "https://quizme-3318d.web.app/",
+      "github": "https://github.com/KostaD02/quizme"
+    },
+    "stacks": ["Angular", "Angular material", "SweetAlert2", "Firebase"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Binary Tree cpp",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Binary-Tree-cpp"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Data structure cpp",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Data-structure-CPP"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Comment with Firebase",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Comment-with-firebase/",
+      "github": "https://github.com/KostaD02/Comment-with-firebase"
+    },
+    "stacks": ["HTML", "CSS", "JS", "Firebase"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Travel More (non responsive)",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "live": "https://travelmore-a0675.firebaseapp.com/",
+      "github": "https://github.com/KostaD02/TravelMore-angular"
+    },
+    "stacks": ["Angular", "Bootstrap", "Firebase"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Tower of hanoi",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Tower-of-Hanoi"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Form builder",
+    "description": null,
+    "year": 2021,
+    "made_at": null,
+    "url": {
+      "live": "https://angularformworking.web.app/",
+      "github": "https://github.com/KostaD02/form-builder/tree/master/angularForm"
+    },
+    "stacks": ["Angular", "Firebase"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Bigint class",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/BigInt-Class"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Spiral color change",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Spiral-color-change-js/",
+      "github": "https://github.com/KostaD02/Spiral-color-change-js"
+    },
+    "stacks": ["HTML", "CSS", "JS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Tic Tac Toe",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Tic-Tac-Toe-JS/",
+      "github": "https://github.com/KostaD02/Tic-Tac-Toe-JS"
+    },
+    "stacks": ["HTML", "CSS", "JS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Movie CRUD example",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/React-movie-example"
+    },
+    "stacks": ["React", "lodash"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "CRUD Blog",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/SimpleBlogSite"
+    },
+    "stacks": ["Express", "MongoDB"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Simple Calculator",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/React-Simple-Calculator"
+    },
+    "stacks": ["React"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Rational number class",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Rational-Number-Class"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Date and time class",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Date-and-Time"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Convert number to word",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Convert-Number-To-Word"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Movie Theater",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/MovieTheater/",
+      "github": "https://github.com/KostaD02/MovieTheater"
+    },
+    "stacks": ["HTML", "CSS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Student data convertor",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/StudentsBase"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
+  }
+]

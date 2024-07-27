@@ -17,6 +17,7 @@ layout: "base.njk"
   </article>
 </section>
 <section id="about" class="about">
+  <a class="skip" href="/#experience">Skip to experience</a>
   <article>
     <h2 class="header-text">About Me</h2>
     <p>
@@ -25,7 +26,7 @@ layout: "base.njk"
     </p>
     <p>
       I taught at
-      <a href="https://itstep.org/" target="_blank" class="external">IT STEP Academy</a>
+      <a href="{{ urls.step }}" target="_blank" class="external">IT STEP Academy</a>
       from September 2021 to September 2024 and had previously worked on various projects and for different companies from
       time to time.
     </p>
@@ -45,6 +46,7 @@ layout: "base.njk"
   </aside>
 </section>
 <section id="experience" class="experience">
+  <a class="skip" href="/#projects">Skip to work</a>
   <h2 class="header-text">Where I've Worked</h2>
   <div class="jobs">
     <div class="jobs__tabs">
@@ -68,7 +70,7 @@ layout: "base.njk"
       <div class="jobs__description__header">
         <h3>Senior Front-End Developer
           <span>
-            <a class="external" target="_blank" href="https://www.etoro.com/">
+            <a class="external" target="_blank" href="{{ urls.etoro }}">
               eToro
             </a>
           </span>
@@ -94,3 +96,33 @@ layout: "base.njk"
     </div>
   </div>
 </section>
+<section class="projects" id="projects">
+  <a class="skip" href="/#noteworthy-projects">Skip to projects</a>
+  <h2 class="header-text">Some Things I've Built</h2>
+  <div class="projects_list">
+    {% for work in works %}
+      <article class="project {% if loop.index % 2 === 0 %}right{% endif %}">
+        <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}" class="external_image" style="background-image: url('{{ work.backgroundUrl }}')"></a>
+        <aside class="content">
+          <p class="tag">{{ work.type }}</p>
+          <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}">{{ work.title }}</a>
+          <div class="project_description">
+            <p>{{ work.description }}</p>
+          </div>
+          <p class="tags">
+            {% for stack in work.stacks %}
+              <span>{{ stack }}</span>
+            {% endfor %}
+          </p>
+          {% if work.readMore %}
+            <a class="read-more" href="{{ work.readMore }}">Read more</a>
+          {% endif %}
+        </aside>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+<section class="noteworthy-projects" id="noteworthy-projects">
+  <a class="skip" href="/#noteworthy-projects">Skip to contact</a>
+</section>
+<section class="contact" id="contact"></section>

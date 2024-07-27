@@ -1,5 +1,61 @@
 @use "./variables" as *;
 
+@media screen and (max-width: 945px) {
+  main {
+    section {
+      &.projects {
+        .projects_list {
+          .project {
+            justify-content: center;
+
+            .external_image {
+              max-width: 100%;
+              z-index: -5;
+
+              &::before {
+                background-color: $navy-color;
+                opacity: 0.8;
+              }
+            }
+
+            &.right {
+              justify-content: center;
+              .content {
+                left: unset;
+                place-items: center;
+                text-align: center;
+
+                a,
+                p {
+                  text-align: center;
+                }
+              }
+            }
+
+            .content {
+              left: unset;
+              right: unset;
+              top: unset;
+              place-items: center;
+              text-align: center;
+
+              p {
+                text-align: center;
+              }
+
+              .project_description {
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0px 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   header {
     nav.flex-center {
@@ -97,6 +153,30 @@
           }
         }
       }
+
+      &.projects {
+        .projects_list {
+          .project {
+            .content {
+              .project_description {
+                p {
+                  font-size: $font-size-sm;
+                }
+              }
+              p.tags {
+                justify-content: center;
+                color: $white-color;
+              }
+              a {
+                &.read-more {
+                  font-size: $font-size-xl;
+                  margin-top: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
@@ -156,6 +236,18 @@
           img {
             width: 150px;
             height: 150px;
+          }
+        }
+      }
+
+      &.projects {
+        .project {
+          .content {
+            row-gap: 5px !important;
+
+            p.tags {
+              row-gap: 5px !important;
+            }
           }
         }
       }
