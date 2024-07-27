@@ -9,6 +9,17 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
+  eleventyConfig.addFilter("aFilter", function (array = [], filterBy = "") {
+    return array.filter((item) => item[filterBy]);
+  });
+
+  eleventyConfig.addFilter(
+    "aSlice",
+    function (array = [], start = 0, end = array.length) {
+      return array.slice(start, end);
+    }
+  );
+
   return {
     dir: {
       input: "src",
