@@ -1,4 +1,4 @@
-function init() {
+function initMainJs() {
   const header = document.querySelector("header");
   const menu = document.querySelector("button.menu");
   const skips = document.querySelectorAll("a.skip");
@@ -86,4 +86,4 @@ function init() {
   }
 }
 
-window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("DOMContentLoaded", initMainJs);
