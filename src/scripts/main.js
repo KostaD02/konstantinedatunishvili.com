@@ -4,10 +4,12 @@ function initMainJs() {
   const header = document.querySelector("header");
   const menu = document.querySelector("button.menu");
   const skips = document.querySelectorAll("a.skip");
+  const scorllUp = document.querySelector("#scroll-up");
 
   let lastScrollPos = 0;
 
   menu.addEventListener("click", handleMenuClick);
+  scorllUp.addEventListener("click", handleScrollUp);
   window.addEventListener("scroll", handleScroll);
   window.addEventListener("resize", handleResize);
 
@@ -38,6 +40,14 @@ function initMainJs() {
     } else {
       header.classList.add("scrolled");
       header.classList.remove("hide");
+    }
+
+    if (scrollPosition > 500) {
+      scorllUp.style.opacity = 1;
+      scorllUp.children[0].classList.add("animate");
+    } else {
+      scorllUp.style.opacity = 0;
+      scorllUp.children[0].classList.remove("animate");
     }
 
     lastScrollPos = scrollPosition;
@@ -97,6 +107,13 @@ function initMainJs() {
       document.querySelector("#aos-css").remove();
       console.log("Cannot init AOS, no animation on scroll :(");
     }
+  }
+
+  function handleScrollUp() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   }
 }
 

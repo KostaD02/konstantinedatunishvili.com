@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /404/
+Disallow: /404
+Allow: /
+Sitemap: https://konstantinedatunishvili.com/sitemap.xml

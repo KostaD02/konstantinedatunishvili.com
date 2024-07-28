@@ -92,3 +92,50 @@ main {
 .mt-3 {
   margin-top: 3rem;
 }
+
+.scroll-up {
+  border-radius: 50%;
+  border: none;
+  position: fixed;
+  bottom: 40px;
+  right: 11px;
+  padding: 5px;
+  z-index: 500;
+  opacity: 0;
+  transition: $transition;
+
+  svg {
+    width: 20px;
+    height: 20px;
+    transition: $transition;
+
+    &.animate {
+      animation: light-up 4s linear;
+    }
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    color: $green-color;
+    box-shadow: none;
+    transform: none;
+
+    svg {
+      fill: $green-color;
+    }
+  }
+
+  &.stroke:hover {
+    svg {
+      fill: none;
+      stroke: $green-color;
+    }
+  }
+
+  &:focus-visible {
+    outline: 2px dashed $green-color;
+    outline-offset: 2px;
+    box-shadow: none;
+    transform: none;
+  }
+}

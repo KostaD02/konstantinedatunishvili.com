@@ -58,20 +58,38 @@
 }
 
 @keyframes typing {
-  from {
+  0% {
     width: 0;
   }
-  to {
+  100% {
     width: 100%;
   }
 }
 
 @keyframes blink-caret {
-  from,
-  to {
+  0%,
+  100% {
     border-color: transparent;
   }
   50% {
     border-color: $green-color;
+  }
+}
+
+@keyframes light-up {
+  0% {
+    fill: $slate-color;
+  }
+  25% {
+    fill: $green-color;
+  }
+  50% {
+    fill: $slate-color;
+  }
+  75% {
+    fill: $green-color;
+  }
+  100% {
+    fill: $slate-color;
   }
 }
