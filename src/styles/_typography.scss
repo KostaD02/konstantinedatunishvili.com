@@ -127,11 +127,12 @@ a.skip {
   position: absolute;
   transition: $transition;
   top: 0px;
-  left: -100%;
+  left: -200%;
   width: 1px;
   height: 1px;
   overflow: hidden;
   z-index: -99;
+  opacity: 0;
 
   &:focus-visible {
     outline: none;
@@ -151,6 +152,7 @@ a.skip {
     box-shadow: none;
     transform: none;
     z-index: 1000;
+    opacity: 1;
   }
 }
 
