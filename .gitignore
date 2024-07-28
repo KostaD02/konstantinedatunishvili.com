@@ -9,3 +9,8 @@ public
 # style
 
 src/styles/*.css
+
+# firebase
+
+.firebase
+firebase-debug.log
