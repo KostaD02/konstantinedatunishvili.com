@@ -1,5 +1,6 @@
 function initMainJs() {
   initAOS();
+  helloFromConsole();
 
   const header = document.querySelector("header");
   const menu = document.querySelector("button.menu");
@@ -66,6 +67,7 @@ function initMainJs() {
     const parent = this;
 
     if (isOpen) {
+      scorllUp.style.opacity = 0;
       header.classList.add("hide-colors");
       const modal = document.createElement("div");
       modal.classList.add("navigation-modal");
@@ -114,6 +116,17 @@ function initMainJs() {
       top: 0,
       behavior: "smooth",
     });
+  }
+
+  function helloFromConsole() {
+    console.log(
+      "%cWelcome to my portfolio",
+      "color:#3f51b5;font-size:28px;font-weight:bold"
+    );
+    console.log(
+      "%cI hope you like it!",
+      "color:#3f51b5;font-size:20px;font-weight:bold"
+    );
   }
 }
 
