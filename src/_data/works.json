@@ -4,7 +4,7 @@
     "title": "EverREST",
     "url": "https://everrest.educata.dev/",
     "backgroundUrl": "./assets/images/everrest.jpg",
-    "description": "EveREST was built to assist front-end developers in creating websites more efficiently. The concept revolves around providing free API calls achievable through a REST API. This project empowers users to employ CRUD operations at no cost. Users can develop shopping websites, implement cart functionalities, manage authentication, generate QR codes, retrieve random quotes, and much more.",
+    "description": "EveREST was built to assist front-end developers in learning to build websites more efficiently. The concept revolves around providing free API calls achievable through a REST API. This project empowers users to employ CRUD operations at no cost. Users can develop shopping websites, implement cart functionalities, manage authentication, generate QR codes, retrieve random quotes, and much more.",
     "stacks": ["Nest.js", "mdBook", "MongoDB", "JWT", "QR"],
     "readMore": null,
     "isExternal": true
@@ -14,7 +14,7 @@
     "title": "Iswavle",
     "url": "https://iswavle.com/",
     "backgroundUrl": "./assets/images/iswavle.jpg",
-    "description": "This website provides free learning resources for Front End development. The website has a built-in code editor that allows you to write and experiment with code directly on the platform. You can practice with practical examples integrated into educational articles. The website is available only in the Georgian language.",
+    "description": "This website provides free learning resources. The website has a built-in code editor that allows you to write and experiment with code directly on the platform. You can practice with practical examples integrated into educational articles. The website is available only in the Georgian language.",
     "stacks": ["Angular", "SSR", "SEO", "MD"],
     "readMore": null,
     "isExternal": true
@@ -22,11 +22,11 @@
   {
     "type": "Article",
     "title": "QR Code",
-    "url": "/qr_project",
+    "url": "/qr-project",
     "backgroundUrl": "./assets/images/qr_code.png",
-    "description": "I have developed the scientific project titled 'Multi-level Access of Information Systems by QR Codes'. The idea has been successfully implemented and demonstrated through the example of a higher educational institution, specifically a university.",
+    "description": "I have developed the scientific project titled 'Multi-level Access of Information Systems by QR Codes'. The idea has been successfully implemented and demonstrated in the example of a higher educational institution.",
     "stacks": ["Angular", "Express", "MongoDB", "Full-stack", "QR Codes"],
-    "readMore": "qr_project",
+    "readMore": "qr-project",
     "isExternal": false
   }
 ]
