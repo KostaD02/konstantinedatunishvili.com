@@ -1,5 +1,27 @@
 [
   {
+    "name": "Easy pass",
+    "description": "Self-hosting password manager app",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/easy-pass"
+    },
+    "stacks": ["Node.js", "Express", "MongoDB", "crypto", "docker"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Educata bot",
+    "description": "Github bot for automatic actions on PR & Issues",
+    "year": 2024,
+    "made_at": "Educata",
+    "url": {
+      "github": "https://github.com/educata/educata-bot"
+    },
+    "stacks": ["JavaScript", "probot", "docker"],
+    "show_in_noteworthy_projects": true
+  },
+  {
     "name": "Iswavle (archived)",
     "description": "This was base version of current Iswavle before rebuild.",
     "year": 2023,
@@ -29,7 +51,7 @@
       "github": "https://github.com/KostaD02/algorithms"
     },
     "stacks": ["Algorithms", "JavaScript", "Node.js"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Realtime Chat",
@@ -53,7 +75,7 @@
       "github": "https://github.com/KostaD02/QR-read-write"
     },
     "stacks": ["Angular", "SCSS", "QR"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "eToro",
