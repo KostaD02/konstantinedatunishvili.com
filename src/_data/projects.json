@@ -1,5 +1,40 @@
 [
   {
+    "name": "Educata Styles",
+    "description": "Educata's design system.",
+    "year": 2025,
+    "made_at": "Educata",
+    "url": {
+      "live": "https://educata.github.io/educata-style/",
+      "github": "https://github.com/educata/educata-style"
+    },
+    "stacks": ["SCSS", "storybook"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Monotor",
+    "description": "Open-Source monitoring application.",
+    "year": 2025,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/monotor"
+    },
+    "stacks": ["NX", "Angular", "Nest.js", "MongoDB", "Docker"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Guess the word",
+    "description": "Georgian WORDLE with 3 level",
+    "year": 2024,
+    "made_at": null,
+    "url": {
+      "live": "https://kostad02.github.io/Guses-The-Word/",
+      "github": "https://github.com/KostaD02/Guses-The-Word"
+    },
+    "stacks": ["HTML", "CSS", "JS"],
+    "show_in_noteworthy_projects": false
+  },
+  {
     "name": "Easy pass",
     "description": "Self-hosting password manager app",
     "year": 2024,
@@ -40,7 +75,7 @@
       "Express",
       "MongoDB"
     ],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Algorithms",
@@ -63,7 +98,7 @@
       "github": "https://github.com/KostaD02/Realtime-Chat"
     },
     "stacks": ["Angular", "SCSS", "Firebase"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Qr read & write",
