@@ -130,8 +130,12 @@
 
   footer {
     position: static;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .socials {
+      width: 100%;
       position: static;
       display: flex;
       justify-content: center;
@@ -150,7 +154,19 @@
     }
 
     .contact__gmail {
-      display: none;
+      width: 100%;
+      position: static;
+      order: -1;
+
+      a {
+        writing-mode: horizontal-tb;
+      }
+
+      ul {
+        &::after {
+          display: none;
+        }
+      }
     }
   }
 }
