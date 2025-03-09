@@ -1,4 +1,7 @@
 const eleventySass = require("eleventy-sass");
+const markdownIt = require("markdown-it");
+const markdownAnchor = require("markdown-it-anchor");
+const markdownItHighlight = require("markdown-it-highlightjs");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventySass);
@@ -52,6 +55,19 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("parseUrlLastSegment", function (url) {
     return url.split("/").pop().split(".")[0] || "all";
   });
+
+  const md = markdownIt({
+    linkify: true,
+    typographer: true,
+  });
+
+  md.use(markdownAnchor, {
+    permalink: markdownAnchor.permalink.headerLink(),
+  });
+
+  md.use(markdownItHighlight, { auto: false });
+
+  eleventyConfig.setLibrary("md", md);
 
   return {
     dir: {

@@ -234,6 +234,10 @@
   main {
     padding: 100px 25px 25px;
 
+    pre {
+      max-width: calc(100vw - 50px);
+    }
+
     section {
       &.about {
         article {
