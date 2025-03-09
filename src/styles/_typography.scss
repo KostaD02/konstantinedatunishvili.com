@@ -79,7 +79,8 @@ a:focus-visible {
 }
 
 a.link,
-a.header-anchor {
+a.header-anchor,
+.blog a {
   line-height: normal;
   font-size: inherit;
   font-family: inherit;
