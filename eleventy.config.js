@@ -23,6 +23,36 @@ module.exports = function (eleventyConfig) {
     }
   );
 
+  eleventyConfig.addFilter("capitalCase", function (string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  });
+
+  eleventyConfig.addFilter("blogDate", function (data) {
+    const date = new Date(data);
+    return date.toLocaleDateString("en-US", {
+      month: "short",
+      day: "2-digit",
+      year: "numeric",
+    });
+  });
+
+  eleventyConfig.addFilter("tagNavigationList", function (data) {
+    const tags = Object.keys(data);
+    const postIndex = tags.indexOf("post");
+    if (postIndex) {
+      tags.splice(postIndex, 1);
+    }
+    return tags;
+  });
+
+  eleventyConfig.addFilter("isBlogPage", function (page) {
+    return page.includes("blog") || page.includes("tags");
+  });
+
+  eleventyConfig.addFilter("parseUrlLastSegment", function (url) {
+    return url.split("/").pop().split(".")[0] || "all";
+  });
+
   return {
     dir: {
       input: "src",

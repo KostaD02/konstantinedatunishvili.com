@@ -81,7 +81,7 @@
   }
 
   main {
-    padding: 50px;
+    padding: 100px 50px 50px;
 
     section {
       &.about {
@@ -232,7 +232,7 @@
 
 @media screen and (max-width: 480px) {
   main {
-    padding: 25px;
+    padding: 100px 25px 25px;
 
     section {
       &.about {

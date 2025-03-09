@@ -121,11 +121,11 @@ function initMainJs() {
   function helloFromConsole() {
     console.log(
       "%cWelcome to my portfolio",
-      "color:#3f51b5;font-size:28px;font-weight:bold"
+      "color:#64ffda;font-size:28px;font-weight:bold"
     );
     console.log(
       "%cI hope you like it!",
-      "color:#3f51b5;font-size:20px;font-weight:bold"
+      "color:#64ffda;font-size:20px;font-weight:bold"
     );
   }
 }

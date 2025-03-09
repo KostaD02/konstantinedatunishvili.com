@@ -4,20 +4,30 @@
   </a>
   <aside class="flex-center">
     <ul class="flex-center">
+      {% if page.url === '/' %}
+        <li>
+          <a href="/#about">About</a>
+        </li>
+        <li>
+          <a href="/#experience">Experience</a>
+        </li>
+        <li>
+          <a href="/#projects">Work</a>
+        </li>
+        <li>
+          <a href="/#contact">Contact</a>
+        </li>
+      {% endif %}
+      {% if page.url !== '/' %}
+        <li>
+          <a href="/">Home</a>
+        </li>
+      {% endif %}
       <li>
-        <a href="/#about">About</a>
+        <a href="/blog">Blog</a>
       </li>
       <li>
-        <a href="/#experience">Experience</a>
-      </li>
-      <li>
-        <a href="/#projects">Work</a>
-      </li>
-      <li>
-        <a href="/#contact">Contact</a>
-      </li>
-      <li>
-        <a class="resume" href="./assets/files/resume.pdf" target="_blank" data-skip-external-style="true">Resume</a>
+        <a class="resume" href="./assets/files/resume.pdf" target="_blank">Resume</a>
       </li>
     </ul>
     <div class="burger">

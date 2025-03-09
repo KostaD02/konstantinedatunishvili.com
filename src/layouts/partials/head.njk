@@ -36,5 +36,8 @@
   {% if page.url === "/archive.html" %}
     <link rel="stylesheet" href="/styles/archive.css"/>
   {% endif %}
+  {% if page.url | isBlogPage %}
+    <link rel="stylesheet" href="/styles/blog.css"/>
+  {% endif %}
   <link rel="stylesheet" href="/styles/responsive.css"/>
 </head>
