@@ -162,8 +162,8 @@ However, like before, this does not actually publish the port—it just document
 
 Finally, `CMD ["nginx", "-g", "daemon off;"]` ensures that Nginx runs in the foreground so that Docker doesn’t terminate the container immediately.
 
-Be careful when using this Nginx approach, as it modifies the base serving directory.
-This means that if a user already has a website in that location, it will be replaced with this one.
+> **Be careful** when using this Nginx approach, as it modifies the base serving directory.
+> This means that if a user already has a website in that location, it will be replaced with this one.
 
 This is a simple way to serve an application with Nginx. However, you can also use different approaches,
 such as serving with Node.js, [Caddy](https://caddyserver.com/), or even Nginx with a more advanced configuration to handle multiple sites or additional optimizations.
