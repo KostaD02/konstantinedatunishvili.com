@@ -195,6 +195,19 @@ ul.list {
   }
 }
 
+.blog ul {
+  padding: 0 15px;
+  margin: 10px 0;
+  li {
+    padding-left: 5px;
+    margin-bottom: 10px;
+    &::marker {
+      content: "▹";
+      color: $green-color;
+    }
+  }
+}
+
 div.logo {
   position: relative;
   width: 45px;
@@ -280,7 +293,7 @@ code.hljs {
 
 code:not(pre *) {
   padding: 0 0.3rem;
-  background: #011627;
+  background-color: $lightest-navy-color;
   color: #addb67;
 }
 
