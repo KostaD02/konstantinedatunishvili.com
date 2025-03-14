@@ -330,6 +330,12 @@ volumes:
   monotor-data: {}
 ```
 
+To run Docker Compose, use the following command:
+
+```
+docker compose up -d
+```
+
 ## Scripts
 
 To make life easier, here are some predefined scripts you can use in `package.json`.
