@@ -87,7 +87,7 @@ dist
 There are many approaches to serving applications using Dockerfiles.
 This can be done using `docker-compose`, the local context of a Dockerfile, and other methods.
 
-In this article, we will use deployed Docker images with `docker-compose`.
+In this article, we will use deployed Docker images with `docker-compose` and also a local build.
 
 ### Writing dockerfiles
 
