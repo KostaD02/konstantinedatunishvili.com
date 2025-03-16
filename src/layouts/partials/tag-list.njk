@@ -1,0 +1,15 @@
+<nav>
+  <ul>
+    {% set activeTag = page.url | parseUrlLastSegment %}
+    {%- for tag in collections | tagNavigationList -%}
+      <li>
+        {% if tag === "all" %}
+          {% set isActive = "blog" === activeTag %}
+          <a href="/blog" class="link {% if isActive %}active{% endif %}">All</a>
+        {% else %}
+          <a href="/tags/{{ tag }}" class="link {% if tag === activeTag %}active{% endif %}">{{ tag | capitalCase }}</a>
+        {% endif %}
+      </li>
+    {%- endfor -%}
+  </ul>
+</nav>

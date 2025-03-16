@@ -1,0 +1,14 @@
+---
+layout: "base.njk"
+title: Blog
+description: "Browse blog posts"
+permalink: "blog.html"
+---
+
+<section class="blog-entry">
+  <h1>Blog</h1>
+  {% include "tag-list.njk" %}
+  {%- for post in collections.post | reverse -%}
+    {% include "blog-entry.njk" %}
+  {%- endfor -%}
+</section>

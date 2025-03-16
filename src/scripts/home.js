@@ -79,7 +79,7 @@ function initHomeJs() {
           h3.innerHTML += `
            <span>
               <a
-                class="external"
+                class="link"
                 target="_blank"
                 href="${experience.url}"
               >

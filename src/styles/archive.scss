@@ -11,10 +11,10 @@ main {
     width: 100%;
     max-width: 1600px;
     box-sizing: border-box;
+    padding: 0;
 
     h1 {
       margin: 0px;
-      font-size: clamp(40px, 8vw, 80px);
       font-weight: 500;
       font-family: $primary-font;
       padding-left: 20px;
