@@ -42,7 +42,7 @@
     "url": {
       "github": "https://github.com/KostaD02/easy-pass"
     },
-    "stacks": ["Node.js", "Express", "MongoDB", "crypto", "docker"],
+    "stacks": ["Node.js", "Express", "MongoDB", "crypto", "Docker"],
     "show_in_noteworthy_projects": true
   },
   {
