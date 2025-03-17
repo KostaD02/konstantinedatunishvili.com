@@ -1,0 +1,139 @@
+@import "./variables";
+
+main {
+  .blog-entry {
+    width: 100%;
+    max-width: 1600px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 15px;
+
+    h1 {
+      width: 100%;
+      margin: 0px;
+      font-weight: 500;
+      font-family: $primary-font;
+    }
+
+    nav {
+      ul {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    article {
+      display: grid;
+      grid-template-columns: 1fr;
+      row-gap: 5px;
+      margin: 50px 0;
+      padding: 5px 15px;
+      position: relative;
+      border-radius: 4px;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 13px;
+        height: 100%;
+        border-left: 2px solid $green-color;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+      }
+
+      a {
+        width: fit-content;
+
+        h2 {
+          color: inherit;
+        }
+      }
+
+      p {
+        margin: 0;
+        color: $white-color;
+        font-size: $font-size-lg;
+      }
+
+      time {
+        font-size: $font-size-md;
+      }
+
+      div.chips {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin: 10px 0;
+
+        span {
+          padding: 5px;
+          font-size: $font-size-xxs;
+          border-radius: 8px;
+          padding: 3px 8px;
+        }
+      }
+    }
+  }
+
+  .blog {
+    width: 100%;
+    max-width: 800px;
+    box-sizing: border-box;
+    padding: 0;
+
+    article {
+      position: relative;
+      img {
+        width: 100%;
+        max-height: 420px;
+        object-fit: cover;
+        margin-bottom: 15px;
+      }
+
+      h1 {
+        font-size: clamp($font-size-xxl, 5vw, $font-size-heading);
+      }
+
+      h2 {
+        font-size: clamp($font-size-xl, 5vw, $font-size-xxl);
+
+        &:focus-visible {
+          outline: none;
+        }
+      }
+
+      p,
+      li {
+        font-size: $font-size-md;
+      }
+
+      blockquote {
+        margin: 0;
+        padding: 5px 0 5px 15px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-left: 2px solid $green-color;
+        margin: 15px 0;
+      }
+
+      a.skip {
+        top: unset;
+        overflow: unset;
+
+        &:focus {
+          top: unset;
+        }
+      }
+    }
+  }
+}

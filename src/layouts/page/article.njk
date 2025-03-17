@@ -1,0 +1,13 @@
+---
+layout: "base.njk"
+---
+
+<section class="blog">
+  <article typeof="BlogPosting" resource="https://konstantinedatunishvili.com/blog/{{ post.page.fileSlug }}">
+    <img src="{{ image }}" alt="{{ imageAlt }}">
+    <h1>{{ title }}</h1>
+    <section class="content">
+      {{ content | safe }}
+    </section>
+  </article>
+</section>

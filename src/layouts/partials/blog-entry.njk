@@ -1,0 +1,16 @@
+<article typeof="BlogPosting" resource="https://konstantinedatunishvili.com/blog/{{ post.page.fileSlug }}" data-aos="slide-right" data-aos-duration="{{ 500 * loop.index }}">
+  <a href="/blog/{{ post.page.fileSlug }}" class="link">
+    <h2>
+      {{ post.data.title }}
+    </h2>
+  </a>
+  <p>{{ post.data.description }}</p>
+  <div class="chips">
+    {% for chip in post.data.chips %}
+      <span class="chip">{{ chip }}</span>
+    {% endfor %}
+  </div>
+  <time datetime="{{ post.data.date }}">
+    {{ post.data.date | blogDate }}
+  </time>
+</article>
