@@ -244,8 +244,6 @@ services:
     container_name: monotor-db
     image: mongo:latest
     restart: always
-    volumes:
-      - mongo_db:/data/db
     networks:
       - monotor-network
 
@@ -261,9 +259,6 @@ services:
       PORT: 2201
     networks:
       - monotor-network
-    volumes:
-      - monotor-data:/app/data
-      - monotor-logs:/app/logs
 
   client:
     container_name: monotor-client
@@ -279,11 +274,6 @@ services:
 networks:
   monotor-network:
     driver: bridge
-
-volumes:
-  mongo_db: {}
-  monotor-data: {}
-  monotor-logs: {}
 ```
 
 In this YAML file, we use the following properties:
@@ -307,8 +297,6 @@ services:
     container_name: monotor-db
     image: mongo:latest
     restart: always
-    volumes:
-      - mongo_db:/data/db
     networks:
       - monotor-network
 
@@ -326,9 +314,6 @@ services:
       PORT: 2201
     networks:
       - monotor-network
-    volumes:
-      - monotor-data:/app/data
-      - monotor-logs:/app/logs
 
   client:
     container_name: monotor-client
@@ -346,10 +331,6 @@ services:
 networks:
   monotor-network:
     driver: bridge
-
-volumes:
-  mongo_db: {}
-  monotor-data: {}
 ```
 
 To run Docker Compose, use the following command:

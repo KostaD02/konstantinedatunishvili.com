@@ -124,6 +124,11 @@ a.header-anchor,
       }
     }
   }
+
+  &:not(:hover)::after {
+    transform-origin: right;
+    transform: scaleX(0);
+  }
 }
 
 a.skip {
