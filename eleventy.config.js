@@ -68,6 +68,9 @@ module.exports = function (eleventyConfig) {
 
   md.use(markdownItHighlight, { auto: false });
 
+  md.renderer.rules.table_open = () => '<div class="table-wrapper"><table>';
+  md.renderer.rules.table_close = () => "</table></div>";
+
   eleventyConfig.setLibrary("md", md);
 
   return {

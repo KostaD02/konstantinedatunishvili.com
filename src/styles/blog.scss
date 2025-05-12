@@ -134,6 +134,40 @@ main {
           top: unset;
         }
       }
+
+      div.table-wrapper {
+        width: 100%;
+        max-width: calc(100vw - 50px);
+        margin: 15px 0;
+        overflow-x: auto;
+
+        table {
+          width: 100%;
+          margin: 0;
+          overflow: auto;
+          border-collapse: collapse;
+
+          th {
+            color: $white-color;
+          }
+
+          th,
+          td {
+            padding: 16px 10px;
+            font-size: $font-size-md;
+            text-align: left;
+            border-bottom: 1px solid $green-color;
+          }
+
+          tr {
+            &:last-child {
+              td {
+                border-bottom: none;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
