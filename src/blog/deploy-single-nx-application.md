@@ -40,6 +40,7 @@ Select as you like, but it's preferable to use these answers:
 | Where would you like to create your workspace?     |            |                        | Up to you                                                                  |
 | Which stack do you want to use?                    | angular    | ✔                      | Can be different but in this article we will use angular                   |
 | Integrated monorepo, or standalone project?        | standalone | ✔                      | Can be done with different monorepos but it's differnet approach           |
+| Which bundler would you like to use?               | esbuild    |                        | Up to you                                                                  |
 | Do you want to enable Server-Side Rendering (SSR)? | No         | ✔                      | Can be done with SSR but to keep simple we will not use it in this article |
 | Which unit test runner would you like to use?      | jest       |                        | if you don't want choose `None`                                            |
 | Test runner to use for end to end (E2E) tests      | cypress    |                        | if you don't want choose `None`                                            |
@@ -53,7 +54,7 @@ NX Let's create a new workspace [https://nx.dev/getting-started/intro]
 √ Where would you like to create your workspace? · myorg
 √ Which stack do you want to use? · angular
 √ Integrated monorepo, or standalone project? · standalone
-√ Which bundler would you like to use? · rspack
+√ Which bundler would you like to use? · esbuild
 √ Default stylesheet format · scss
 √ Do you want to enable Server-Side Rendering (SSR)? · No
 √ Which unit test runner would you like to use? · jest
