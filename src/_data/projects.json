@@ -1,5 +1,40 @@
 [
   {
+    "name": "Steam-Idler",
+    "description": "Open-source idling application.",
+    "year": 2025,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/educata/steam-idler"
+    },
+    "stacks": ["NestJS", "MongoDB", "Docker"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Builder (WIP)",
+    "description": "Website builder.",
+    "year": 2025,
+    "made_at": null,
+    "url": {
+      "live": "https://builder.konstantinedatunishvili.com/",
+      "github": "https://github.com/KostaD02/builder"
+    },
+    "stacks": ["Angular", "SCSS", "RxJS", "Signals"],
+    "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Cryptographic algorithms",
+    "description": "Implementation of cryptographic algorithms in JavaScript, including custom algorithm.",
+    "year": 2025,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/cryptographic-algorithms",
+      "url": "https://kostad02.github.io/cryptographic-algorithms/"
+    },
+    "stacks": ["JavaScript"],
+    "show_in_noteworthy_projects": false
+  },
+  {
     "name": "Educata Styles",
     "description": "Educata's design system.",
     "year": 2025,
@@ -43,7 +78,7 @@
       "github": "https://github.com/KostaD02/easy-pass"
     },
     "stacks": ["Node.js", "Express", "MongoDB", "crypto", "Docker"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Educata bot",
@@ -155,7 +190,7 @@
       "npm": "https://www.npmjs.com/package/ngx-cube-loader"
     },
     "stacks": ["Angular", "Lib"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Color utils",
