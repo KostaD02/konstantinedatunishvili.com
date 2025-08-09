@@ -11,18 +11,6 @@
     "show_in_noteworthy_projects": true
   },
   {
-    "name": "Builder (WIP)",
-    "description": "Website builder.",
-    "year": 2025,
-    "made_at": null,
-    "url": {
-      "live": "https://builder.konstantinedatunishvili.com/",
-      "github": "https://github.com/KostaD02/builder"
-    },
-    "stacks": ["Angular", "SCSS", "RxJS", "Signals"],
-    "show_in_noteworthy_projects": true
-  },
-  {
     "name": "Cryptographic algorithms",
     "description": "Implementation of cryptographic algorithms in JavaScript, including custom algorithm.",
     "year": 2025,
@@ -78,7 +66,7 @@
       "github": "https://github.com/KostaD02/easy-pass"
     },
     "stacks": ["Node.js", "Express", "MongoDB", "crypto", "Docker"],
-    "show_in_noteworthy_projects": false
+    "show_in_noteworthy_projects": true
   },
   {
     "name": "Educata bot",
@@ -125,15 +113,15 @@
   },
   {
     "name": "Realtime Chat",
-    "description": "Join our real-time chat platform to connect instantly with others in general or specialized groups.",
+    "description": "Chat application",
     "year": 2023,
     "made_at": null,
     "url": {
       "live": "https://chat.konstantinedatunishvili.com/",
       "github": "https://github.com/KostaD02/Realtime-Chat"
     },
-    "stacks": ["Angular", "SCSS", "Firebase"],
-    "show_in_noteworthy_projects": false
+    "stacks": ["Angular", "SCSS", "Firebase", "socket.io"],
+    "show_in_noteworthy_projects": true
   },
   {
     "name": "Qr read & write",
@@ -177,7 +165,7 @@
       "MongoDB",
       "JWT"
     ],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "NgxCubeLoader",

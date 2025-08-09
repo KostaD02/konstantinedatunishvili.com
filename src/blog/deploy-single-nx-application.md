@@ -215,6 +215,6 @@ Hosting URL: **some link**
 In this guide, we covered how to deploy an Nx Angular application to Firebase.
 By following these steps, you can easily deploy any app to Firebase with seamless GitHub Actions integration.
 
-For reference, you can check my project [here](https://github.com/KostaD02/builder).
+For reference, you can check my project [here](https://github.com/KostaD02/angular-nx-firebase-hosting-example).
 
 Have fun!
