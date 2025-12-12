@@ -9,7 +9,8 @@
     "build:sass": "sass src/styles --style compressed --no-source-map",
     "watch:sass": "sass --watch src/styles --style compressed --no-source-map",
     "build:eleventy": "eleventy",
-    "watch:eleventy": "eleventy --serve"
+    "watch:eleventy": "eleventy --serve",
+    "generate:sitemap": "node scripts/generate-sitemap.js"
   },
   "author": "Konstantine datunishvili",
   "license": "ISC",

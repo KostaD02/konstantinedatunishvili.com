@@ -14,3 +14,7 @@ src/styles/*.css
 
 .firebase
 firebase-debug.log
+
+# generated
+
+src/sitemap.xml
