@@ -2,7 +2,6 @@
   "name": "konstantinedatunishvili.com",
   "version": "1.0.0",
   "description": "Personal website",
-  "main": "index.js",
   "scripts": {
     "start": "npm-run-all build:sass --parallel watch:*",
     "build": "npm-run-all build:*",
@@ -13,7 +12,7 @@
     "generate:sitemap": "node scripts/generate-sitemap.js"
   },
   "author": "Konstantine datunishvili",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "eleventy-sass": "^2.2.4",
