@@ -1,7 +1,7 @@
 ---
 layout: "article.njk"
 title: Animate elements when they enter view
-description: Learn how to use the new CSS animation-timeline view() function to trigger animations when elements enter the viewport, no JavaScript required.
+description: How to use the new CSS animation-timeline view() function.
 image: "/assets/images/css-animation-timeline.png"
 imageAlt: CSS animation timeline view illustration
 date: 2026-01-02
@@ -33,7 +33,7 @@ They start when the element is rendered and run for a fixed duration (or infinit
 `animation-timeline` changes that concept entirely.
 
 Instead of time, animation can now be driven by **scroll progress** or **view progress**.
-One of the most usefull timelines is `view()`.
+One of the most useful timelines is `view()`.
 
 ```css
 .my-fancy-element {
@@ -65,7 +65,7 @@ This makes perfect animations for:
 - Scroll based animations.
 - Fade in effects.
 - Slide-in animations.
-- Selection revelas.
+- Selection reveals.
 
 ## Example
 
