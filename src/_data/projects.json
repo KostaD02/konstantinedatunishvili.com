@@ -1,5 +1,16 @@
 [
   {
+    "name": "MirrorTab",
+    "description": "A chrome extension that allows you to mirror your tab actions",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/MirrorTab"
+    },
+    "stacks": ["CRXJS"],
+    "show_in_noteworthy_projects": true
+  },
+  {
     "name": "Steam-Idler",
     "description": "Open-source idling application.",
     "year": 2025,
@@ -121,7 +132,7 @@
       "github": "https://github.com/KostaD02/Realtime-Chat"
     },
     "stacks": ["Angular", "SCSS", "Firebase", "socket.io"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Qr read & write",
