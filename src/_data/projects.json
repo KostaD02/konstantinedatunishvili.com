@@ -5,7 +5,8 @@
     "year": 2026,
     "made_at": null,
     "url": {
-      "github": "https://github.com/KostaD02/MirrorTab"
+      "github": "https://github.com/KostaD02/MirrorTab",
+      "url": "https://chromewebstore.google.com/detail/mirrortab/bljopdbabofhephejfdlmclnjjipihpb"
     },
     "stacks": ["CRXJS"],
     "show_in_noteworthy_projects": true
