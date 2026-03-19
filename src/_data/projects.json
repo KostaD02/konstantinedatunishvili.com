@@ -183,5 +183,16 @@
       "JWT"
     ],
     "show_in_noteworthy_projects": false
+  },
+  {
+    "name": "Rational number class",
+    "description": null,
+    "year": 2020,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/Rational-Number-Class"
+    },
+    "stacks": ["c++"],
+    "show_in_noteworthy_projects": false
   }
 ]
