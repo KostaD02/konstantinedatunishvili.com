@@ -5,7 +5,7 @@
     "year": 2026,
     "made_at": null,
     "url": {
-      "github": "https://github.com/educata/steam-idler"
+      "github": "https://github.com/KostaD02/steam-idler"
     },
     "stacks": ["Nx", "Docker", "NestJS", "Angular"],
     "show_in_noteworthy_projects": true
@@ -28,7 +28,7 @@
     "year": 2025,
     "made_at": null,
     "url": {
-      "github": "https://github.com/educata/steam-idler-legacy"
+      "github": "https://github.com/KostaD02/steam-idler-legacy"
     },
     "stacks": ["NestJS", "MongoDB", "Docker"],
     "show_in_noteworthy_projects": false
