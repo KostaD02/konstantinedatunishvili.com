@@ -27,7 +27,7 @@ module.exports = function (eleventyConfig) {
     "aSlice",
     function (array = [], start = 0, end = array.length) {
       return array.slice(start, end);
-    }
+    },
   );
 
   eleventyConfig.addFilter("capitalCase", function (string) {
@@ -83,7 +83,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: "src",
-      output: "public",
+      output: "_site",
       layouts: "layouts/page",
       includes: "layouts/partials",
     },
