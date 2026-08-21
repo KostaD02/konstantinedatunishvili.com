@@ -10,11 +10,6 @@ public
 
 src/styles/*.css
 
-# firebase
-
-.firebase
-firebase-debug.log
-
 # generated
 
 src/sitemap.xml
