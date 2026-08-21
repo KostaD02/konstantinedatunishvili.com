@@ -1,13 +1,13 @@
-<nav>
-  <ul>
+<nav aria-label="Blog tags">
+  <ul class="kd-list-plain kd-d-flex kd-flex-wrap kd-items-center kd-gap-3">
     {% set activeTag = page.url | parseUrlLastSegment %}
     {%- for tag in collections | tagNavigationList -%}
       <li>
         {% if tag === "all" %}
           {% set isActive = "blog" === activeTag %}
-          <a href="/blog" class="link {% if isActive %}active{% endif %}">All</a>
+          <a href="/blog" class="kd-link {% if isActive %}kd-active{% endif %}">All</a>
         {% else %}
-          <a href="/tags/{{ tag }}" class="link {% if tag === activeTag %}active{% endif %}">{{ tag | capitalCase }}</a>
+          <a href="/tags/{{ tag }}" class="kd-link {% if tag === activeTag %}kd-active{% endif %}">{{ tag | capitalCase }}</a>
         {% endif %}
       </li>
     {%- endfor -%}

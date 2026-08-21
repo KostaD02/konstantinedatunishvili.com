@@ -1,40 +1,40 @@
-<nav class="flex-center">
-  <a href="/#intro" class="logo">
+<header class="kd-navbar">
+  <a href="/#intro" class="kd-navbar__brand" aria-label="Konstantine Datunishvili">
     {% include "logo.njk" %}
   </a>
-  <aside class="flex-center">
-    <ul class="flex-center">
-      {% if page.url === '/' %}
-        <li>
-          <a href="/#about">About</a>
-        </li>
-        <li>
-          <a href="/#experience">Experience</a>
-        </li>
-        <li>
-          <a href="/#projects">Work</a>
-        </li>
-        <li>
-          <a href="/#contact">Contact</a>
-        </li>
-      {% endif %}
-      {% if page.url !== '/' %}
-        <li>
-          <a href="/">Home</a>
-        </li>
-      {% endif %}
-      <li>
-        <a href="/blog">Blog</a>
+  <ul class="kd-navbar__menu kd-stagger kd-d-md-none">
+    {% if page.url === '/' %}
+      <li class="kd-animate-drop-in">
+        <a href="/#about" class="kd-navbar__link">About</a>
       </li>
-      <li>
-        <a class="resume" href="/assets/files/resume.pdf" target="_blank">Resume</a>
+      <li class="kd-animate-drop-in">
+        <a href="/#experience" class="kd-navbar__link">Experience</a>
       </li>
-    </ul>
-    <div class="burger">
-      <button aria-label="menu" class="menu">
-        <div class="icon-left"></div>
-        <div class="icon-right"></div>
-      </button>
-    </div>
-  </aside>
-</nav>
+      <li class="kd-animate-drop-in">
+        <a href="/#projects" class="kd-navbar__link">Work</a>
+      </li>
+      <li class="kd-animate-drop-in">
+        <a href="/#contact" class="kd-navbar__link">Contact</a>
+      </li>
+    {% endif %}
+    {% if page.url !== '/' %}
+      <li class="kd-animate-drop-in">
+        <a href="/" class="kd-navbar__link">Home</a>
+      </li>
+    {% endif %}
+    <li class="kd-animate-drop-in">
+      <a href="/blog" class="kd-navbar__link">Blog</a>
+    </li>
+    <li class="kd-animate-drop-in">
+      <a class="kd-btn kd-btn--outline" href="/assets/files/resume.pdf" target="_blank">Resume</a>
+    </li>
+  </ul>
+  <button
+    type="button"
+    class="kd-burger kd-d-none kd-d-md-block"
+    aria-label="Menu"
+    aria-expanded="false">
+    <span class="kd-burger__bar"></span>
+    <span class="kd-burger__bar"></span>
+  </button>
+</header>

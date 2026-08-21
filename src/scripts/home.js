@@ -77,16 +77,12 @@ function initHomeJs() {
         h3.textContent = experience.position;
         if (experience.url) {
           h3.innerHTML += `
-           <span>
-              <a
-                class="link"
+            <span class="kd-text-accent">@<a
+                class="kd-link"
                 target="_blank"
                 href="${experience.url}"
-              >
-                ${experience.name}
-              </a
-              >
-            </span>
+              >${experience.name}</a
+              ></span>
         `;
         }
         p.innerHTML = `${experience.startDate} - ${experience.endDate}`;
@@ -95,13 +91,14 @@ function initHomeJs() {
           ul.innerHTML += `<li><span>${description}</span></li>`;
         });
         self.forEach((button) => {
-          button.classList.remove("active");
+          button.classList.remove("kd-active");
+          button.setAttribute("aria-selected", "false");
         });
-        this.classList.add("active");
+        this.classList.add("kd-active");
+        this.setAttribute("aria-selected", "true");
       });
       if (index === 0) {
         button.click();
-        button.classList.add("active");
       }
     });
   }

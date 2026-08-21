@@ -27,7 +27,7 @@ In this article, you'll learn what `animation-timeline: view()` is, how it works
 
 ## What is animation-timeline?
 
-<a class="skip" href="#what-does-view()-do?">Skip to What does view() do?</a>
+<a class="kd-skip kd-skip--inline" href="#what-does-view()-do?">Skip to What does view() do?</a>
 
 Traditionally, CSS animations are time based.
 They start when the element is rendered and run for a fixed duration (or infinitely).
@@ -47,7 +47,7 @@ This means the animation progresses as the element moves through the viewport.
 
 ## What does view() do?
 
-<a class="skip" href="#example">Skip to Example</a>
+<a class="kd-skip kd-skip--inline" href="#example">Skip to Example</a>
 
 The `view()` function creates a timeline based on when an element enters and exits the viewport.
 
@@ -73,7 +73,7 @@ This makes perfect animations for:
 
 ## Example
 
-<a class="skip" href="#controlling-when-the-animation-starts-and-ends">Skip to Controlling when the animation starts and ends</a>
+<a class="kd-skip kd-skip--inline" href="#controlling-when-the-animation-starts-and-ends">Skip to Controlling when the animation starts and ends</a>
 
 Lets create simple scroll driven animation:
 
@@ -135,7 +135,7 @@ When `div.fancy-element` enter in the viewport, the animation starts progressing
 
 ## Controlling when the animation starts and ends
 
-<a class="skip" href="#entry,-exit,-and-cover-keywords">Skip to entry, exit, and cover keywords</a>
+<a class="kd-skip kd-skip--inline" href="#entry,-exit,-and-cover-keywords">Skip to entry, exit, and cover keywords</a>
 
 By default, `view()` uses the full visibility range, but you can adjust it using [`animation-range`](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/animation-range).
 
@@ -158,7 +158,7 @@ This gives you precise control without turning your CSS into a math problem.
 
 ### entry, exit, and cover keywords
 
-<a class="skip" href="#browser-support">Skip to Browser support</a>
+<a class="kd-skip kd-skip--inline" href="#browser-support">Skip to Browser support</a>
 
 `animation-range` supports semantic keywords:
 
@@ -179,7 +179,7 @@ div.fancy-element {
 
 ## Browser support
 
-<a class="skip" href="#safe-fallback-strategy">Skip to Safe fallback strategy</a>
+<a class="kd-skip kd-skip--inline" href="#safe-fallback-strategy">Skip to Safe fallback strategy</a>
 
 `animation-timeline` and `view()` are modern CSS features.
 Support is improving, but not universal.
@@ -192,7 +192,7 @@ As of now:
 
 ## Safe fallback strategy
 
-<a class="skip" href="#summary">Skip to Summary</a>
+<a class="kd-skip kd-skip--inline" href="#summary">Skip to Summary</a>
 
 The easiest approach is progressive enhancement.
 

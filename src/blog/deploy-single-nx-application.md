@@ -25,7 +25,7 @@ deploy the application to Firebase and set up [PR previews](https://docs.github.
 
 ## Create Nx workspace
 
-<a class="skip" href="#build-nx-application">Skip to Build Nx application</a>
+<a class="kd-skip kd-skip--inline" href="#build-nx-application">Skip to Build Nx application</a>
 
 Create a new Nx workspace using the following command:
 
@@ -78,7 +78,7 @@ Also create a [GitHub repository](https://docs.github.com/en/repositories/creati
 
 ## Build Nx application
 
-<a class="skip" href="#deploying-application">Skip to Deploying application</a>
+<a class="kd-skip kd-skip--inline" href="#deploying-application">Skip to Deploying application</a>
 
 Open `package.json` and add new build script:
 
@@ -118,7 +118,7 @@ To deploy the application, we need to host the `browser` folder.
 
 ## Deploying application
 
-<a class="skip" href="#deploying-to-firebase">Skip to Deploying to firebase</a>
+<a class="kd-skip kd-skip--inline" href="#deploying-to-firebase">Skip to Deploying to firebase</a>
 
 An application can be deployed on many hosting services,
 but I prefer Firebase since it offers an easy setup with GitHub Actions.
@@ -131,7 +131,7 @@ This change will prevent issues when installing dependencies, as it will install
 
 ## Deploying to firebase
 
-<a class="skip" href="#summary">Skip to Summary</a>
+<a class="kd-skip kd-skip--inline" href="#summary">Skip to Summary</a>
 
 Deploying to Firebase can be done with a few commands.
 

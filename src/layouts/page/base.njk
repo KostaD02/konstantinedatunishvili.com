@@ -2,18 +2,20 @@
 <html lang="en">
   {% include "head.njk" %}
   <body>
-    <a class="skip" href="/#about">Skip to about</a>
-    <header>
-      {% include "header.njk" %}
-    </header>
-    <main>
+    <a class="kd-skip" href="/#about">Skip to about</a>
+    {% include "header.njk" %}
+    <main id="main" class="kd-container-xl kd-gutter-7 kd-gutter-md-5 kd-gutter-xs-4 kd-pt-7 kd-pb-5">
       {{ content | safe }}
     </main>
-    <footer>
-      {% include "footer.njk" %}
-    </footer>
-    <button id="scroll-up" class="scroll-up flex-center">
-      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" fill="#8892b0">
+    {% include "footer.njk" %}
+    <button
+      type="button"
+      id="scroll-up"
+      class="kd-fab"
+      aria-label="Back to top"
+      style="--kd-fab-offset-inline-end: var(--kd-space-1); --kd-animate-duration: 4s; --kd-animate-fill: none;">
+      <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 384 512" fill="currentColor" role="img">
+        <title>Back to top</title>
         <path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2 160 448c0 17.7
         14.3 32 32 32s32-14.3 32-32l0-306.7L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/>
       </svg>

@@ -1,5 +1,18 @@
 [
   {
+    "name": "Brand",
+    "description": "Branding and design system for personal projects.",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/brand",
+      "npm": "https://www.npmjs.com/package/@kostad/brand",
+      "live": "https://kostad02.github.io/brand/"
+    },
+    "stacks": ["SCSS", "storybook", "Lib"],
+    "show_in_noteworthy_projects": true
+  },
+  {
     "name": "Steam-Idler",
     "description": "Open-source idling application.",
     "year": 2026,
@@ -100,7 +113,7 @@
       "github": "https://github.com/educata/educata-bot"
     },
     "stacks": ["JavaScript", "probot", "docker"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "eToro",

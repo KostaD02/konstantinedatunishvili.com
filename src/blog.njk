@@ -5,10 +5,12 @@ description: "Browse blog posts"
 permalink: "blog.html"
 ---
 
-<section class="blog-entry">
-  <h1>Blog</h1>
+<section class="kd-section kd-measure-xxxl">
+  <h1 class="kd-fw-medium">Blog</h1>
   {% include "tag-list.njk" %}
-  {%- for post in collections.post | reverse -%}
-    {% include "blog-entry.njk" %}
-  {%- endfor -%}
+  <div class="kd-d-flex kd-flex-column kd-gap-5 kd-mt-5">
+    {%- for post in collections.post | reverse -%}
+      {% include "blog-entry.njk" %}
+    {%- endfor -%}
+  </div>
 </section>

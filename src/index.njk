@@ -2,216 +2,226 @@
 layout: "base.njk"
 ---
 
-<section id="intro" class="full-size flex-center intro">
-  <article>
-    <h3>Hi, my name is</h3>
-    <h1>Konstantine Datunishvili
-      <span hidden class="hidden">კონსტანტინე დათუნიშვილი</span>
-    </h1>
-    <h2>I
-      <span id="update-word">create</span>
-      websites.
-    </h2>
-    <p>
-      I am a Full-stack developer, Educator and a Tech enthusiast. I am always looking for new opportunities to learn and
-      grow.
-    </p>
-  </article>
+<section
+  id="intro"
+  class="kd-section kd-section--flush kd-h-viewport kd-measure-xs kd-hero kd-stagger"
+  style="--kd-animate-duration: 1s;">
+  <p class="kd-hero__eyebrow kd-animate-fade-up">Hi, my name is</p>
+  <h1 class="kd-hero__title kd-animate-fade-up">Konstantine Datunishvili
+    <span hidden class="kd-d-none">კონსტანტინე დათუნიშვილი</span>
+  </h1>
+  <h2 class="kd-hero__subtitle kd-animate-fade-up">I
+    <span id="update-word">create</span>
+    websites.
+  </h2>
+  <p class="kd-hero__lede kd-animate-fade-up">
+    I am a Full-stack developer, Educator and a Tech enthusiast. I am always looking for new opportunities to learn and
+    grow.
+  </p>
 </section>
-<section id="about" class="about" data-aos="slide-up" data-aos-duration="1000">
-  <a class="skip" href="/#experience">Skip to experience</a>
-  <article>
-    <h2 class="header-text">About Me</h2>
-    <p>
-      Hello, I am Konstantine Datunishvili, a Senior Software Developer. I have a passion for creating intuitive user
-      interfaces via Angular.
-    </p>
-    <p>
-      I taught at
-      <a href="{{ urls.step }}" target="_blank" class="link">IT STEP Academy</a>
-      from September 2021 to September 2024 and had previously worked on various projects for different companies from time to
-      time.
-    </p>
-    <p>
-      I Also possess Back-End development knowledge and can build Full-Stack projects with Node & Angular. I strive to keep up
-      with the latest trends in web development.
-    </p>
-    <p>Here are some technologies I've been working with recently:</p>
-    <ul class="list">
-      {% for skill in skills %}
-        <li>{{ skill }}</li>
-      {% endfor %}
-    </ul>
-  </article>
-  <aside>
-    <img src="./assets/images/personal_image.png" alt="Konstantine Datunishvili image"/>
-  </aside>
-</section>
-<section id="experience" class="experience" data-aos="slide-up" data-aos-duration="1000">
-  <a class="skip" href="/#projects">Skip to work</a>
-  <h2 class="header-text">Where I've Worked</h2>
-  <div class="jobs">
-    <div class="jobs__tabs">
-      {% for experience in experiences %}
-        <button data-experience-index="{{ loop.index }}">
-          {{ experience.name }}
-        </button>
-        <div class="hidden" hidden data-experience="{{ loop.index }}">
-          <span class="hidden" hidden data-name="name">{{ experience.name }}</span>
-          <span class="hidden" hidden data-name="position">{{ experience.position }}</span>
-          <span class="hidden" hidden data-name="startDate">{{ experience.startDate }}</span>
-          <span class="hidden" hidden data-name="endDate">{{ experience.endDate }}</span>
-          <span class="hidden" hidden data-name="url">{{ experience.url }}</span>
-          {% for description in experience.descriptions %}
-            <span class="hidden" hidden data-name="descriptions">{{ description }}</span>
-          {% endfor %}
-        </div>
-      {% endfor %}
-    </div>
-    <div class="jobs__description" id="job_description">
-      <div class="jobs__description__header">
-        <h3>Senior Front-End Developer
-          <span>
-            <a class="link" target="_blank" href="{{ urls.etoro }}">
-              eToro
-            </a>
-          </span>
-        </h3>
-        <p>May 2024 - Present</p>
-      </div>
-      <div class="jobs__description__details">
-        <ul class="list">
-          <li>
-            <span>Improving and maintaining one of the world’s leading broker platforms.</span>
-          </li>
-          <li>
-            <span>Working back-to-back with the designers, product managers, and analysts to deliver new features.</span>
-          </li>
-          <li>
-            <span>Delivering impactful A/B tests, neatly measured with analytics.</span>
-          </li>
-          <li>
-            <span>Enhancing our codebase with Angular and Nx, and extending applications to mobile platforms using Cordova.</span>
-          </li>
-        </ul>
-      </div>
-    </div>
+<section id="about" class="kd-section kd-py-7 kd-measure-lg" data-aos="slide-up" data-aos-duration="1000">
+  <a class="kd-skip" href="/#experience">Skip to experience</a>
+  <div class="kd-split kd-split--md">
+    <article class="kd-prose">
+      <h2 class="kd-heading">About Me</h2>
+      <p>
+        Hello, I am Konstantine Datunishvili, a Senior Software Developer. I have a passion for creating intuitive user
+        interfaces via Angular.
+      </p>
+      <p>
+        I taught at
+        <a href="{{ urls.step }}" target="_blank">IT STEP Academy</a>
+        from September 2021 to September 2024 and had previously worked on various projects for different companies from time to
+        time.
+      </p>
+      <p>
+        I Also possess Back-End development knowledge and can build Full-Stack projects with Node & Angular. I strive to keep up
+        with the latest trends in web development.
+      </p>
+      <p>Here are some technologies I've been working with recently:</p>
+      <ul class="kd-list" style="--kd-list-columns: repeat(2, minmax(100px, 200px));">
+        {% for skill in skills %}
+          <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </article>
+    <figure class="kd-frame">
+      <img
+        class="kd-h-auto"
+        src="./assets/images/personal_image.png"
+        alt="Konstantine Datunishvili"
+        width="300"
+        height="300"/>
+    </figure>
   </div>
 </section>
-<section class="projects" id="projects">
-  <a class="skip" href="/#noteworthy-projects">Skip to projects</a>
-  <h2 class="header-text">Some Things I've Built</h2>
-  <div class="projects_list">
+<section id="experience" class="kd-section kd-py-7 kd-measure-sm" data-aos="slide-up" data-aos-duration="1000">
+  <a class="kd-skip" href="/#projects">Skip to work</a>
+  <h2 class="kd-heading">Where I've Worked</h2>
+  <div class="kd-d-flex kd-d-sm-block kd-items-start kd-gap-4">
+    <div class="kd-tabs kd-tabs--sm-horizontal" role="tablist" aria-orientation="vertical" aria-label="Employers">
+      {% for experience in experiences %}
+        <button
+          type="button"
+          class="kd-tabs__tab"
+          role="tab"
+          aria-selected="false"
+          aria-controls="job_description"
+          data-experience-index="{{ loop.index }}">
+          {{ experience.name }}
+        </button>
+      {% endfor %}
+    </div>
+    <div class="kd-grow-1 kd-pt-3" id="job_description" role="tabpanel" tabindex="0" style="min-height: 20rem;">
+      <h3 class="kd-fs-xxl kd-fw-medium">Senior Front-End Developer
+        <span class="kd-text-accent">@<a class="kd-link" target="_blank" href="{{ urls.etoro }}">eToro</a></span>
+      </h3>
+      <p class="kd-fs-xs kd-mb-4">May 2024 - Present</p>
+      <ul class="kd-list">
+        <li>
+          <span>Improving and maintaining one of the world’s leading broker platforms.</span>
+        </li>
+        <li>
+          <span>Working back-to-back with the designers, product managers, and analysts to deliver new features.</span>
+        </li>
+        <li>
+          <span>Delivering impactful A/B tests, neatly measured with analytics.</span>
+        </li>
+        <li>
+          <span>Enhancing our codebase with Angular and Nx, and extending applications to mobile platforms using Cordova.</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  {% for experience in experiences %}
+    <div hidden class="kd-d-none" data-experience="{{ loop.index }}">
+      <span data-name="name">{{ experience.name }}</span>
+      <span data-name="position">{{ experience.position }}</span>
+      <span data-name="startDate">{{ experience.startDate }}</span>
+      <span data-name="endDate">{{ experience.endDate }}</span>
+      <span data-name="url">{{ experience.url }}</span>
+      {% for description in experience.descriptions %}
+        <span data-name="descriptions">{{ description }}</span>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</section>
+<section id="projects" class="kd-section kd-py-7 kd-measure-xl">
+  <a class="kd-skip" href="/#noteworthy-projects">Skip to projects</a>
+  <h2 class="kd-heading">Some Things I've Built</h2>
+  <div class="kd-d-grid kd-gap-7">
     {% for work in works %}
-      <article class="project {% if loop.index % 2 === 0 %}right{% endif %}" data-aos="slide-up" data-aos-duration="1000">
-        <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}" class="external_image" style="background-image: url('{{ work.backgroundUrl }}')"></a>
-        <aside class="content">
-          <p class="tag">{{ work.type }}</p>
-          <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}">{{ work.title }}</a>
-          <div class="project_description">
-            <p>{{ work.description }}</p>
+      <article class="kd-feature {% if loop.index % 2 === 0 %}kd-feature--reverse{% endif %}" data-aos="slide-up" data-aos-duration="1000">
+        <a
+          href="{{ work.url }}"
+          target="{% if work.isExternal %} _blank {% else %} _self {% endif %}"
+          class="kd-feature__media"
+          aria-label="{{ work.title }}"
+          style="background-image: url('{{ work.backgroundUrl }}')"></a>
+        <aside class="kd-feature__content">
+          <p class="kd-feature__eyebrow kd-lh-md">{{ work.type }}</p>
+          <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}" class="kd-feature__title kd-lh-none">{{ work.title }}</a>
+          <div class="kd-card kd-border-transparent kd-shadow-md" style="--kd-card-padding: var(--kd-space-4);">
+            <p class="kd-card__text kd-fs-lg kd-lh-md">{{ work.description }}</p>
           </div>
-          <p class="tags">
+          <ul class="kd-feature__tags kd-gap-2">
             {% for stack in work.stacks %}
-              <span>{{ stack }}</span>
+              <li class="kd-fs-xs kd-lh-md kd-text-secondary">{{ stack }}</li>
             {% endfor %}
-          </p>
+          </ul>
           {% if work.readMore %}
-            <a class="read-more" href="{{ work.readMore }}">Read more</a>
+            <a class="kd-link" href="{{ work.readMore }}">Read more</a>
           {% endif %}
         </aside>
       </article>
     {% endfor %}
   </div>
 </section>
-<section class="noteworthy-projects" id="noteworthy-projects">
-  <a class="skip" href="/#contact">Skip to contact</a>
-  <h2 class="header-text">Other Noteworthy Projects</h2>
-  <article class="projects-list" data-aos="slide-up" data-aos-duration="1000">
+<section id="noteworthy-projects" class="kd-section kd-py-7 kd-measure-xl">
+  <a class="kd-skip" href="/#contact">Skip to contact</a>
+  <h2 class="kd-heading kd-heading--center kd-heading--bare">Other Noteworthy Projects</h2>
+  <div class="kd-grid-auto" data-aos="slide-up" data-aos-duration="1000">
     {% for project in projects | aFilter("show_in_noteworthy_projects") %}
-      <div class="project" tabindex="1">
-        <div class="project__side">
-          <div class="project__top flex-center">
-            <div class="folder">
-              <img src="./assets/icons/folder.svg" alt="folder icon"/>
-            </div>
-            <div class="external flex-center">
-              {% if project.url.github %}
-                <a class="flex-center" href="{{ project.url.github }}" target="_blank">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    stroke="#8892b0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <title>GitHub</title>
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07
-                      0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5
-                      3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                  </svg>
-                </a>
-              {% endif %}
-              {% if project.url.live %}
-                <a class="flex-center" href="{{ project.url.live }}" target="_blank">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#8892b0"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <title>External Link</title>
-                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                    <polyline points="15 3 21 3 21 9"></polyline>
-                    <line x1="10" y1="14" x2="21" y2="3"></line>
-                  </svg>
-                </a>
-              {% endif %}
-              {% if project.url.npm %}
-                <a class="flex-center" href="{{ project.url.npm }}" target="_blank">
-                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="#8892b0">
-                    <title>Npm</title>
-                    <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160
-                    0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"/>
-                  </svg>
-                </a>
-              {% endif %}
-            </div>
-          </div>
-          <div class="project__middle">
-            <h3>
-              <a href="{% if project.url.live %} {{ project.url.live }} {% else %} {{ project.url.github }} {% endif %}" target="_blank">
-                {{ project.name }}
+      <article class="kd-card kd-card--lift">
+        <div class="kd-card__header">
+          <img src="./assets/icons/folder.svg" alt="" width="40" height="40"/>
+          <div class="kd-d-flex kd-items-center">
+            {% if project.url.github %}
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.github }}" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <title>GitHub</title>
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07
+                    0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5
+                    3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
               </a>
-            </h3>
-            <p>
-              {{ project.description }}
-            </p>
+            {% endif %}
+            {% if project.url.live %}
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.live }}" target="_blank">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  role="img"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <title>External Link</title>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            {% endif %}
+            {% if project.url.npm %}
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.npm }}" target="_blank">
+                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="currentColor">
+                  <title>Npm</title>
+                  <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160
+                  0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"/>
+                </svg>
+              </a>
+            {% endif %}
           </div>
         </div>
-        <div class="project__bottom">
-          <ul>
-            {% for stack in project.stacks | aSlice(0, 4) %}
-              <li>
-                <span>{{ stack }}</span>
-              </li>
-            {% endfor %}
-          </ul>
+        <div class="kd-card__body">
+          <h3 class="kd-m-0">
+            <a
+              class="kd-card__title kd-link--anchor kd-stretch kd-fs-xxl"
+              href="{% if project.url.live %}{{ project.url.live }}{% else %}{{ project.url.github }}{% endif %}"
+              target="_blank">
+              {{ project.name }}
+            </a>
+          </h3>
+          <p class="kd-card__text kd-fs-md">
+            {{ project.description }}
+          </p>
         </div>
-      </div>
+        <ul class="kd-card__footer kd-list-plain kd-flex-wrap kd-gap-x-3">
+          {% for stack in project.stacks | aSlice(0, 4) %}
+            <li class="kd-fs-xxs kd-text-muted">{{ stack }}</li>
+          {% endfor %}
+        </ul>
+      </article>
     {% endfor %}
-  </article>
-  <div class="flex-center mt-3">
-    <a href="/archive">View Archive</a>
+  </div>
+  <div class="kd-flex-center kd-mt-5">
+    <a class="kd-btn kd-btn--outline" href="/archive">View Archive</a>
   </div>
 </section>
-<section class="contact" id="contact" data-aos="slide-up" data-aos-duration="2000">
-  <h2 class="header-text">Get In Touch</h2>
-  <p>My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
-  <a href="mailto:{{ consts.email }}">Contact Me</a>
+<section id="contact" class="kd-section kd-py-7 kd-measure-xxs kd-text-center" data-aos="slide-up" data-aos-duration="2000">
+  <h2
+    class="kd-heading kd-heading--center kd-heading--bare"
+    style="--kd-heading-font-size: var(--kd-font-size-fluid-h1);">Get In Touch</h2>
+  <p class="kd-fs-lg">My inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+  <a class="kd-btn kd-btn--outline kd-mt-4" href="mailto:{{ consts.email }}">Contact Me</a>
 </section>

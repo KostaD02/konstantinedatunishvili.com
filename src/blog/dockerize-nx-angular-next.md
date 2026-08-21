@@ -19,7 +19,7 @@ In this article, you will learn how to dockerize an Nx monorepo with any applica
 
 ## How to Build Nx Applications
 
-<a class="skip" href="#how-to-serve-applications-with-dockerfiles">Skip to How to server applications with Dockerfiles</a>
+<a class="kd-skip kd-skip--inline" href="#how-to-serve-applications-with-dockerfiles">Skip to How to server applications with Dockerfiles</a>
 
 Inside an Nx monorepo, you will have an apps folder containing applications and a libs folder where all libraries are stored.
 To build every application and library, simply run the following command:
@@ -82,7 +82,7 @@ dist
 
 ## How to serve applications with Dockerfiles
 
-<a class="skip" href="#docker-compose">Docker compose</a>
+<a class="kd-skip kd-skip--inline" href="#docker-compose">Docker compose</a>
 
 There are many approaches to serving applications using Dockerfiles.
 This can be done using `docker-compose`, the local context of a Dockerfile, and other methods.
@@ -230,7 +230,7 @@ docker push kostad02/monotor-server:latest
 
 ## Docker Compose
 
-<a class="skip" href="#scripts">Scripts</a>
+<a class="kd-skip kd-skip--inline" href="#scripts">Scripts</a>
 
 Docker Compose is a tool that helps you manage multiple Docker containers easily.
 Instead of running separate docker run commands for each service (like a frontend, backend, and database),

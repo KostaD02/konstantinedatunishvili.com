@@ -1,16 +1,21 @@
-<article typeof="BlogPosting" resource="https://konstantinedatunishvili.com/blog/{{ post.page.fileSlug }}" data-aos="slide-right" data-aos-duration="{{ 500 * loop.index }}">
-  <a href="/blog/{{ post.page.fileSlug }}" class="link">
+<article
+  class="kd-teaser"
+  typeof="BlogPosting"
+  resource="https://konstantinedatunishvili.com/blog/{{ post.page.fileSlug }}"
+  data-aos="slide-right"
+  data-aos-duration="{{ 500 * loop.index }}">
+  <a href="/blog/{{ post.page.fileSlug }}" class="kd-link kd-teaser__title">
     <h2>
       {{ post.data.title }}
     </h2>
   </a>
-  <p>{{ post.data.description }}</p>
-  <div class="chips">
+  <p class="kd-teaser__text">{{ post.data.description }}</p>
+  <div class="kd-teaser__tags">
     {% for chip in post.data.chips %}
-      <span class="chip">{{ chip }}</span>
+      <span class="kd-chip">{{ chip }}</span>
     {% endfor %}
   </div>
-  <time datetime="{{ post.data.date }}">
+  <time class="kd-teaser__meta" datetime="{{ post.data.date }}">
     {{ post.data.date | blogDate }}
   </time>
 </article>

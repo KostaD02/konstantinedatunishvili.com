@@ -4,11 +4,15 @@ const markdownAnchor = require("markdown-it-anchor");
 const markdownItHighlight = require("markdown-it-highlightjs");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(eleventySass);
+  eleventyConfig.addPlugin(eleventySass, {
+    sass: {
+      loadPaths: ["node_modules"],
+      charset: false,
+    },
+  });
 
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/scripts");
-  eleventyConfig.addPassthroughCopy("src/**/*.css");
 
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
@@ -63,12 +67,15 @@ module.exports = function (eleventyConfig) {
   });
 
   md.use(markdownAnchor, {
-    permalink: markdownAnchor.permalink.headerLink(),
+    permalink: markdownAnchor.permalink.headerLink({
+      class: "kd-header-anchor",
+    }),
   });
 
   md.use(markdownItHighlight, { auto: false });
 
-  md.renderer.rules.table_open = () => '<div class="table-wrapper"><table>';
+  md.renderer.rules.table_open = () =>
+    '<div class="kd-table-scroll"><table class="kd-rows">';
   md.renderer.rules.table_close = () => "</table></div>";
 
   eleventyConfig.setLibrary("md", md);

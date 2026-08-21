@@ -2,12 +2,13 @@
 layout: "base.njk"
 ---
 
-<section class="blog">
-  <article typeof="BlogPosting" resource="https://konstantinedatunishvili.com/blog/{{ post.page.fileSlug }}">
+<section class="kd-section kd-measure-md">
+  <article
+    class="kd-prose"
+    typeof="BlogPosting"
+    resource="https://konstantinedatunishvili.com/blog/{{ page.fileSlug }}">
     <img src="{{ image }}" alt="{{ imageAlt }}">
     <h1>{{ title }}</h1>
-    <section class="content">
-      {{ content | safe }}
-    </section>
+    {{ content | safe }}
   </article>
 </section>
