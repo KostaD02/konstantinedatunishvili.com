@@ -1,5 +1,17 @@
 [
   {
+    "name": "Biolume",
+    "description": "A deep-sea theme for VS Code: a mint glow on deep navy",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/biolume",
+      "live": "https://marketplace.visualstudio.com/items?itemName=kostad02.biolume"
+    },
+    "stacks": ["VS Code", "Theme"],
+    "show_in_noteworthy_projects": true
+  },
+  {
     "name": "Brand",
     "description": "Branding and design system for personal projects.",
     "year": 2026,
@@ -102,7 +114,7 @@
       "github": "https://github.com/KostaD02/easy-pass"
     },
     "stacks": ["Node.js", "Express", "MongoDB", "crypto", "Docker"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Educata bot",
