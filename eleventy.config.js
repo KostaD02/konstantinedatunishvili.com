@@ -45,12 +45,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("tagNavigationList", function (data) {
-    const tags = Object.keys(data);
-    const postIndex = tags.indexOf("post");
-    if (postIndex) {
-      tags.splice(postIndex, 1);
-    }
-    return tags;
+    return Object.keys(data).filter((tag) => tag !== "post");
   });
 
   eleventyConfig.addFilter("isBlogPage", function (page) {
