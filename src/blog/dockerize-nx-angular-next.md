@@ -4,8 +4,6 @@ title: How to Dockerize Nx monorepo with Angular and Nest
 description: How to efficiently Dockerize an Nx monorepo containing Angular and NestJs or any app.
 image: "/assets/images/dockerize-nx-angular-nest.png"
 imageAlt: Nx, Docker, Angular, and Nest logos
-imageWidth: 800
-imageHeight: 420
 date: 2025-03-14
 chips: ["Nx", "Angular", "NestJs", "Docker"]
 tags:
