@@ -5,7 +5,7 @@ description: "Archive of konstantine datunishvili's projects"
 permalink: "archive.html"
 ---
 
-<section class="kd-section kd-measure-xxxl" id="content" data-aos="slide-right" data-aos-duration="1000">
+<section class="kd-section kd-measure-xxxl kd-reveal kd-reveal--right" id="content">
   <h1 class="kd-fw-medium">Archive</h1>
   <p class="kd-text-accent kd-fs-md kd-mb-4">
     A list of things I've worked on, which are public, as well have some projects that aren't published or are private.
@@ -44,7 +44,7 @@ permalink: "archive.html"
               {% if project.url %}
                 <div class="kd-d-flex kd-items-center">
                   {% if project.url.github %}
-                    <a href="{{ project.url.github }}" target="_blank" class="kd-icon-link">
+                    <a href="{{ project.url.github }}" target="_blank" rel="noopener" class="kd-icon-link">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -62,7 +62,7 @@ permalink: "archive.html"
                     </a>
                   {% endif %}
                   {% if project.url.live %}
-                    <a href="{{ project.url.live }}" target="_blank" class="kd-icon-link">
+                    <a href="{{ project.url.live }}" target="_blank" rel="noopener" class="kd-icon-link">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         role="img"
@@ -80,7 +80,7 @@ permalink: "archive.html"
                     </a>
                   {% endif %}
                   {% if project.url.swagger %}
-                    <a href="{{ project.url.swagger }}" target="_blank" class="kd-icon-link">
+                    <a href="{{ project.url.swagger }}" target="_blank" rel="noopener" class="kd-icon-link">
                       <svg fill="currentColor" role="img" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                         <title>Swagger</title>
                         <path d="M16 0c-8.823 0-16 7.177-16 16s7.177 16 16 16c8.823 0 16-7.177 16-16s-7.177-16-16-16zM16 1.527c7.995 0 14.473 6.479
@@ -107,7 +107,7 @@ permalink: "archive.html"
                     </a>
                   {% endif %}
                   {% if project.url.npm %}
-                    <a href="{{ project.url.npm }}" target="_blank" class="kd-icon-link">
+                    <a href="{{ project.url.npm }}" target="_blank" rel="noopener" class="kd-icon-link">
                       <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="currentColor">
                         <title>NPM</title>
                         <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160

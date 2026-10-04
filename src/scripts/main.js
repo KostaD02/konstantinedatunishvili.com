@@ -1,5 +1,4 @@
 function initMainJs() {
-  initAOS();
   helloFromConsole();
 
   const navbar = document.querySelector(".kd-navbar");
@@ -105,18 +104,6 @@ function initMainJs() {
 
     document.body.style.overflow = "auto";
     navbar.classList.remove("kd-navbar--bare");
-  }
-
-  function initAOS() {
-    try {
-      AOS.init({
-        once: true,
-      });
-    } catch (err) {
-      // ? If AOS is not loaded, remove the CSS file otherwise it will mess up positions
-      document.querySelector("#aos-css").remove();
-      console.log("Cannot init AOS, no animation on scroll :(");
-    }
   }
 
   function handleScrollUp() {

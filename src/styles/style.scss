@@ -1,1 +1,42 @@
 @use "@kostad/brand/scss/main";
+
+// * Scroll-driven reveal, replaces the AOS CDN dependency.
+// * Elements stay visible when the feature or the user's motion preference says no,
+// * so content never depends on an animation running.
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .kd-reveal {
+      animation: kd-reveal-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 60%;
+    }
+
+    .kd-reveal--right {
+      animation-name: kd-reveal-right;
+    }
+  }
+}
+
+@keyframes kd-reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes kd-reveal-right {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
