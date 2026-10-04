@@ -13,3 +13,6 @@ src/styles/*.css
 # generated
 
 src/sitemap.xml
+# wrangler
+
+.wrangler

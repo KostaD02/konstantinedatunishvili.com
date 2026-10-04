@@ -17,6 +17,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy("src/_redirects");
+  eleventyConfig.addPassthroughCopy("src/_headers");
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -33,6 +34,10 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("capitalCase", function (string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  });
+
+  eleventyConfig.addFilter("isoDate", function (date) {
+    return new Date(date).toISOString();
   });
 
   eleventyConfig.addFilter("blogDate", function (data) {

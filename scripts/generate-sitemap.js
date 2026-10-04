@@ -33,9 +33,23 @@ routesMap.set("/qr-project", {
   lastMod: "2024-08-04",
 });
 
+function parseTags(fileContent) {
+  const block = fileContent.match(/^tags:\n((?:\s+-\s*.+\n)+)/m);
+
+  if (!block) {
+    return [];
+  }
+
+  return block[1]
+    .split("\n")
+    .map((line) => line.replace(/^\s*-\s*/, "").trim())
+    .filter((tag) => tag && tag !== "post");
+}
+
 function fillArticlesRoutes() {
   const articlesDir = path.join(__dirname, "..", "src", "blog");
   const articleFiles = fs.readdirSync(articlesDir);
+  const tags = new Set();
   let newestArticle = "";
 
   for (const file of articleFiles) {
@@ -45,6 +59,11 @@ function fillArticlesRoutes() {
       const match = fileContent.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
       const lastMod = match ? match[1] : "";
       const route = `/blog/${path.basename(file, ".md")}/`;
+
+      for (const tag of parseTags(fileContent)) {
+        tags.add(tag.toLowerCase());
+      }
+
       routesMap.set(route, {
         lastMod,
         priority: 0.8,
@@ -54,6 +73,14 @@ function fillArticlesRoutes() {
         newestArticle = lastMod;
       }
     }
+  }
+
+  for (const tag of tags) {
+    routesMap.set(`/tags/${tag}`, {
+      lastMod: newestArticle,
+      priority: 0.6,
+      changefreq: "weekly",
+    });
   }
 
   return newestArticle;
