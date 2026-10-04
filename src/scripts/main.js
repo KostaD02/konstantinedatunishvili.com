@@ -6,7 +6,8 @@ function initMainJs() {
   const skips = document.querySelectorAll("a.kd-skip");
   const scrollUp = document.querySelector("#scroll-up");
 
-  let lastScrollPos = null;
+  let lastScrollPos = 0;
+  let hasInteracted = false;
   let anchorScrollTimer = null;
   let isAnchorScroll = false;
 
@@ -20,6 +21,11 @@ function initMainJs() {
   });
 
   document.addEventListener("click", handleAnchorClick);
+
+  // ? Only a real gesture may hide the navbar, a restored or shifted scroll position never should
+  for (const type of ["wheel", "touchstart", "keydown", "pointerdown"]) {
+    window.addEventListener(type, markInteraction, { once: true, passive: true });
+  }
   window.addEventListener("hashchange", holdAnchorScroll);
 
   if (window.location.hash) {
@@ -36,6 +42,10 @@ function initMainJs() {
     if (link && /^(\/)?#/.test(link.getAttribute("href") || "")) {
       holdAnchorScroll();
     }
+  }
+
+  function markInteraction() {
+    hasInteracted = true;
   }
 
   function holdAnchorScroll() {
@@ -60,8 +70,6 @@ function initMainJs() {
   function handleScroll() {
     // ? iOS rubber-band overscroll reports a negative scrollTop, clamp it away
     const scrollPosition = Math.max(0, document.documentElement.scrollTop);
-    // ? The first event can be the browser restoring scroll, never read that as scrolling down
-    const isFirstEvent = lastScrollPos === null;
 
     // ? Keep holding while the smooth scroll is still running
     if (isAnchorScroll) {
@@ -71,7 +79,7 @@ function initMainJs() {
     if (scrollPosition === 0) {
       navbar.classList.remove("kd-navbar--hidden");
       navbar.classList.remove("kd-navbar--scrolled");
-    } else if (!isFirstEvent && !isAnchorScroll && scrollPosition > lastScrollPos) {
+    } else if (hasInteracted && !isAnchorScroll && scrollPosition > lastScrollPos) {
       navbar.classList.add("kd-navbar--hidden");
       navbar.classList.add("kd-navbar--scrolled");
     } else {
