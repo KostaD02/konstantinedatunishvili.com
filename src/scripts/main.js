@@ -8,6 +8,8 @@ function initMainJs() {
   const scrollUp = document.querySelector("#scroll-up");
 
   let lastScrollPos = null;
+  let anchorScrollTimer = null;
+  let isAnchorScroll = false;
 
   burger.addEventListener("click", handleMenuClick);
   scrollUp.addEventListener("click", handleScrollUp);
@@ -18,8 +20,32 @@ function initMainJs() {
     skip.addEventListener("keyup", handleSkip);
   });
 
+  document.addEventListener("click", handleAnchorClick);
+  window.addEventListener("hashchange", holdAnchorScroll);
+
+  if (window.location.hash) {
+    holdAnchorScroll();
+  }
+
   // ? Sync with the position the page actually loaded at, restored or not
   handleScroll();
+
+  function handleAnchorClick(event) {
+    const link = event.target.closest && event.target.closest("a");
+
+    // ? Jumping to an anchor scrolls the page for the user, that is not them scrolling
+    if (link && /^(\/)?#/.test(link.getAttribute("href") || "")) {
+      holdAnchorScroll();
+    }
+  }
+
+  function holdAnchorScroll() {
+    isAnchorScroll = true;
+    clearTimeout(anchorScrollTimer);
+    anchorScrollTimer = setTimeout(() => {
+      isAnchorScroll = false;
+    }, 200);
+  }
 
   function handleSkip(event) {
     if (event.code === "Space" || event.code === "Enter") {
@@ -38,10 +64,15 @@ function initMainJs() {
     // ? The first event can be the browser restoring scroll, never read that as scrolling down
     const isFirstEvent = lastScrollPos === null;
 
+    // ? Keep holding while the smooth scroll is still running
+    if (isAnchorScroll) {
+      holdAnchorScroll();
+    }
+
     if (scrollPosition === 0) {
       navbar.classList.remove("kd-navbar--hidden");
       navbar.classList.remove("kd-navbar--scrolled");
-    } else if (!isFirstEvent && scrollPosition > lastScrollPos) {
+    } else if (!isFirstEvent && !isAnchorScroll && scrollPosition > lastScrollPos) {
       navbar.classList.add("kd-navbar--hidden");
       navbar.classList.add("kd-navbar--scrolled");
     } else {
