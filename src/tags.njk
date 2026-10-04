@@ -15,7 +15,7 @@ permalink: /tags/{{ tag | lower }}.html
 <section class="kd-section kd-measure-xxxl">
   <h1 class="kd-fw-medium">Blog</h1>
   {% include "tag-list.njk" %}
-  <div class="kd-d-flex kd-flex-column kd-gap-5 kd-mt-5 kd-stagger" style="--kd-stagger-step: 500ms;">
+  <div class="kd-d-flex kd-flex-column kd-gap-5 kd-mt-5">
     {%- for post in collections[tag] | reverse -%}
       {% include "blog-entry.njk" %}
     {%- endfor -%}
