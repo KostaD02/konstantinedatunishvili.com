@@ -21,6 +21,7 @@ function initMainJs() {
   });
 
   document.addEventListener("click", handleAnchorClick);
+  document.addEventListener("focusin", handleFocusIn);
 
   // ? Only a real gesture may hide the navbar, a restored or shifted scroll position never should
   for (const type of ["wheel", "touchstart", "keydown", "pointerdown"]) {
@@ -55,10 +56,24 @@ function initMainJs() {
     const target = hash.length > 1 && document.getElementById(hash.slice(1));
     const wrapper = target && target.closest(".kd-reveal");
 
+    if (wrapper) {
+      revealWrapper(wrapper);
+    }
+  }
+
+  // ? Keyboard focus can enter parked content, the browser would scroll to where it is parked
+  function handleFocusIn(event) {
+    const wrapper = event.target.closest && event.target.closest(".kd-reveal:not(.kd-reveal--in)");
+
     if (!wrapper) {
       return;
     }
 
+    revealWrapper(wrapper);
+    event.target.scrollIntoView({ block: "nearest" });
+  }
+
+  function revealWrapper(wrapper) {
     wrapper.querySelectorAll('[class*="kd-animate-"]').forEach((element) => {
       element.style.setProperty("--kd-animate-duration", "0s");
     });
