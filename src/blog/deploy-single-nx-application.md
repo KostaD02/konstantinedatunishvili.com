@@ -4,6 +4,8 @@ title: How to deploy single Nx application
 description: How to deploy your nx app with Firebase hosting.
 image: "/assets/images/deploy-single-nx-application.png"
 imageAlt: Nx, Firebase
+imageWidth: 800
+imageHeight: 420
 date: 2025-05-12
 chips: ["Nx", "Angular", "Firebase"]
 tags:

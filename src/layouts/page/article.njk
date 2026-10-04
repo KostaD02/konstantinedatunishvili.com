@@ -1,13 +1,19 @@
 ---
 layout: "base.njk"
+ogType: "article"
+schemaType: "BlogPosting"
 ---
 
 <section class="kd-section kd-measure-md">
-  <article
-    class="kd-prose"
-    typeof="BlogPosting"
-    resource="https://konstantinedatunishvili.com/blog/{{ page.fileSlug }}">
-    <img src="{{ image }}" alt="{{ imageAlt }}">
+  <article class="kd-prose">
+    <img
+      class="kd-h-auto"
+      src="{{ image }}"
+      alt="{{ imageAlt }}"
+      width="{{ imageWidth }}"
+      height="{{ imageHeight }}"
+      fetchpriority="high"
+      decoding="async"/>
     <h1>{{ title }}</h1>
     {{ content | safe }}
   </article>

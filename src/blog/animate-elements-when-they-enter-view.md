@@ -4,6 +4,8 @@ title: Animate elements when they enter view
 description: How to use the CSS animation-timeline view() function.
 image: "/assets/images/css-animation-timeline.png"
 imageAlt: CSS animation timeline view illustration
+imageWidth: 1193
+imageHeight: 624
 date: 2026-01-02
 chips: ["CSS", "Animations", "Web"]
 tags:
