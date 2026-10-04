@@ -1,1 +1,6 @@
 @use "@kostad/brand/scss/main";
+
+// * Nav entrance animation plays once per session, flag is set in head.njk
+.kd-no-intro .kd-navbar__menu > * {
+  animation: none;
+}

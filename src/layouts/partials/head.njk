@@ -28,4 +28,13 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" id="aos-css"/>
   <link rel="stylesheet" href="/styles/style.css"/>
   {% include "schema.njk" %}
+  <script>
+    // ? Runs before paint so the skipped animation never flashes, styled in style.scss
+    try {
+      if (sessionStorage.getItem("kd-nav-intro")) {
+        document.documentElement.classList.add("kd-no-intro");
+      }
+      sessionStorage.setItem("kd-nav-intro", "1");
+    } catch (error) {}
+  </script>
 </head>

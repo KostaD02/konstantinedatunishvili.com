@@ -62,6 +62,16 @@ function initMainJs() {
     }
   }
 
+  function hasOpenedDrawer() {
+    try {
+      const opened = sessionStorage.getItem("kd-drawer-intro");
+      sessionStorage.setItem("kd-drawer-intro", "1");
+      return Boolean(opened);
+    } catch (error) {
+      return false;
+    }
+  }
+
   function isMenuOpen() {
     return burger.getAttribute("aria-expanded") === "true";
   }
@@ -79,6 +89,14 @@ function initMainJs() {
       panel.classList.add("kd-drawer__panel");
       panel.classList.add("kd-stagger");
       panel.innerHTML = navbar.querySelector(".kd-navbar__menu").innerHTML;
+
+      if (hasOpenedDrawer()) {
+        panel.classList.remove("kd-stagger");
+        panel
+          .querySelectorAll(".kd-animate-drop-in")
+          .forEach((item) => item.classList.remove("kd-animate-drop-in"));
+      }
+
       drawer.appendChild(panel);
 
       drawer.addEventListener("click", (event) => {
