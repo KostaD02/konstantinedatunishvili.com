@@ -1,5 +1,7 @@
 <article
-  class="kd-teaser kd-reveal kd-reveal--right">
+  class="kd-teaser"
+  data-aos="slide-right"
+  data-aos-duration="{{ 500 * loop.index }}">
   <a href="/blog/{{ post.page.fileSlug }}/" class="kd-link kd-teaser__title">
     <h2>
       {{ post.data.title }}
