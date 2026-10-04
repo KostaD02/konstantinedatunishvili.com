@@ -48,7 +48,7 @@ function fillArticlesRoutes() {
       const fileContent = fs.readFileSync(filePath, "utf-8");
       const match = fileContent.match(/^date:\s*(\d{4}-\d{2}-\d{2})/m);
       const lastMod = match ? match[1] : LAST_MOD_TODAY;
-      const route = `/blog/${path.basename(file, ".md")}`;
+      const route = `/blog/${path.basename(file, ".md")}/`;
       routesMap.set(route, {
         lastMod,
         priority: 0.8,
