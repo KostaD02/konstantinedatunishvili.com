@@ -26,10 +26,10 @@ function initMainJs() {
   for (const type of ["wheel", "touchstart", "keydown", "pointerdown"]) {
     window.addEventListener(type, markInteraction, { once: true, passive: true });
   }
-  window.addEventListener("hashchange", holdAnchorScroll);
+  window.addEventListener("hashchange", handleHashChange);
 
   if (window.location.hash) {
-    holdAnchorScroll();
+    handleHashChange();
   }
 
   // ? Sync with the position the page actually loaded at, restored or not
@@ -41,7 +41,28 @@ function initMainJs() {
     // ? Jumping to an anchor scrolls the page for the user, that is not them scrolling
     if (link && /^(\/)?#/.test(link.getAttribute("href") || "")) {
       holdAnchorScroll();
+      revealTarget(link.getAttribute("href").replace(/^\//, ""));
     }
+  }
+
+  function handleHashChange() {
+    holdAnchorScroll();
+    revealTarget(window.location.hash);
+  }
+
+  // ? A jump target must already be in place, nobody should watch it slide in after landing
+  function revealTarget(hash) {
+    const target = hash.length > 1 && document.getElementById(hash.slice(1));
+    const wrapper = target && target.closest(".kd-reveal");
+
+    if (!wrapper) {
+      return;
+    }
+
+    wrapper.querySelectorAll('[class*="kd-animate-"]').forEach((element) => {
+      element.style.setProperty("--kd-animate-duration", "0s");
+    });
+    wrapper.classList.add("kd-reveal--in");
   }
 
   function markInteraction() {
