@@ -7,7 +7,8 @@ function initMainJs() {
   const skips = document.querySelectorAll("a.kd-skip");
   const scrollUp = document.querySelector("#scroll-up");
 
-  let lastScrollPos = 0;
+  // ? The browser restores scroll on reload and back, that is not a downward scroll
+  let lastScrollPos = Math.max(0, document.documentElement.scrollTop);
 
   burger.addEventListener("click", handleMenuClick);
   scrollUp.addEventListener("click", handleScrollUp);
