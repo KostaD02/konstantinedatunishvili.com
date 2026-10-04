@@ -1,5 +1,4 @@
 function initMainJs() {
-  initAOS();
   helloFromConsole();
 
   const navbar = document.querySelector(".kd-navbar");
@@ -7,7 +6,8 @@ function initMainJs() {
   const skips = document.querySelectorAll("a.kd-skip");
   const scrollUp = document.querySelector("#scroll-up");
 
-  let lastScrollPos = null;
+  let lastScrollPos = 0;
+  let hasInteracted = false;
   let anchorScrollTimer = null;
   let isAnchorScroll = false;
 
@@ -17,14 +17,20 @@ function initMainJs() {
   window.addEventListener("resize", handleResize);
 
   skips.forEach((skip) => {
+    skip.addEventListener("keydown", handleSkipKeydown);
     skip.addEventListener("keyup", handleSkip);
   });
 
   document.addEventListener("click", handleAnchorClick);
-  window.addEventListener("hashchange", holdAnchorScroll);
+
+  // ? Only a real gesture may hide the navbar, a restored or shifted scroll position never should
+  for (const type of ["wheel", "touchstart", "keydown", "pointerdown"]) {
+    window.addEventListener(type, markInteraction, { once: true, passive: true });
+  }
+  window.addEventListener("hashchange", handleHashChange);
 
   if (window.location.hash) {
-    holdAnchorScroll();
+    handleHashChange();
   }
 
   // ? Sync with the position the page actually loaded at, restored or not
@@ -36,7 +42,33 @@ function initMainJs() {
     // ? Jumping to an anchor scrolls the page for the user, that is not them scrolling
     if (link && /^(\/)?#/.test(link.getAttribute("href") || "")) {
       holdAnchorScroll();
+      revealTarget(link.getAttribute("href").replace(/^\//, ""));
     }
+  }
+
+  function handleHashChange() {
+    holdAnchorScroll();
+    revealTarget(window.location.hash);
+  }
+
+  // ? A jump target must already be in place, nobody should watch it slide in after landing
+  function revealTarget(hash) {
+    const target = hash.length > 1 && document.getElementById(hash.slice(1));
+    const wrapper = target && target.closest(".kd-reveal");
+
+    // ? Place it only while it is still parked, a running reveal must finish on its own
+    if (!wrapper || wrapper.classList.contains("kd-reveal--in")) {
+      return;
+    }
+
+    wrapper.querySelectorAll('[class*="kd-animate-"]').forEach((element) => {
+      element.style.setProperty("--kd-animate-duration", "0s");
+    });
+    wrapper.classList.add("kd-reveal--in");
+  }
+
+  function markInteraction() {
+    hasInteracted = true;
   }
 
   function holdAnchorScroll() {
@@ -47,13 +79,18 @@ function initMainJs() {
     }, 200);
   }
 
+  // ? Space scrolls the page a screen before a link reacts, make it act exactly like Enter
+  function handleSkipKeydown(event) {
+    if (event.code === "Space") {
+      event.preventDefault();
+      event.target.click();
+    }
+  }
+
   function handleSkip(event) {
     if (event.code === "Space" || event.code === "Enter") {
       setTimeout(() => {
         event.target.blur();
-        if (event.code === "Space") {
-          window.location.href = event.target.href;
-        }
       }, 500);
     }
   }
@@ -61,8 +98,6 @@ function initMainJs() {
   function handleScroll() {
     // ? iOS rubber-band overscroll reports a negative scrollTop, clamp it away
     const scrollPosition = Math.max(0, document.documentElement.scrollTop);
-    // ? The first event can be the browser restoring scroll, never read that as scrolling down
-    const isFirstEvent = lastScrollPos === null;
 
     // ? Keep holding while the smooth scroll is still running
     if (isAnchorScroll) {
@@ -72,7 +107,7 @@ function initMainJs() {
     if (scrollPosition === 0) {
       navbar.classList.remove("kd-navbar--hidden");
       navbar.classList.remove("kd-navbar--scrolled");
-    } else if (!isFirstEvent && !isAnchorScroll && scrollPosition > lastScrollPos) {
+    } else if (hasInteracted && !isAnchorScroll && scrollPosition > lastScrollPos) {
       navbar.classList.add("kd-navbar--hidden");
       navbar.classList.add("kd-navbar--scrolled");
     } else {
@@ -97,16 +132,6 @@ function initMainJs() {
     }
   }
 
-  function hasOpenedDrawer() {
-    try {
-      const opened = sessionStorage.getItem("kd-drawer-intro");
-      sessionStorage.setItem("kd-drawer-intro", "1");
-      return Boolean(opened);
-    } catch (error) {
-      return false;
-    }
-  }
-
   function isMenuOpen() {
     return burger.getAttribute("aria-expanded") === "true";
   }
@@ -123,15 +148,8 @@ function initMainJs() {
       const panel = document.createElement("ul");
       panel.classList.add("kd-drawer__panel");
       panel.classList.add("kd-stagger");
+      panel.classList.add("kd-intro");
       panel.innerHTML = navbar.querySelector(".kd-navbar__menu").innerHTML;
-
-      if (hasOpenedDrawer()) {
-        panel.classList.remove("kd-stagger");
-        panel
-          .querySelectorAll(".kd-animate-drop-in")
-          .forEach((item) => item.classList.remove("kd-animate-drop-in"));
-      }
-
       drawer.appendChild(panel);
 
       drawer.addEventListener("click", (event) => {
@@ -159,18 +177,6 @@ function initMainJs() {
 
     document.body.style.overflow = "auto";
     navbar.classList.remove("kd-navbar--bare");
-  }
-
-  function initAOS() {
-    try {
-      AOS.init({
-        once: true,
-      });
-    } catch (err) {
-      // ? If AOS is not loaded, remove the CSS file otherwise it will mess up positions
-      document.querySelector("#aos-css").remove();
-      console.log("Cannot init AOS, no animation on scroll :(");
-    }
   }
 
   function handleScrollUp() {

@@ -3,36 +3,49 @@ function initHomeJs() {
   initExperienceTabs();
 
   function initWordCycle() {
-    const updateWordRef = document.querySelector("#update-word");
+    const wordRef = document.querySelector("#update-word");
 
     // ? Respect the user's motion preference, the cycle is decoration only
-    if (!updateWordRef || prefersReducedMotion()) {
+    if (!wordRef || prefersReducedMotion()) {
       return;
     }
 
-    const wordsToUpdate = ["create", "maintain", "develop"];
-    const animationMs = 5000;
+    const words = ["create", "maintain", "develop"];
+    const holdMs = 5000;
+    const stepMs = 250;
 
-    setInterval(() => {
-      const previousWord = updateWordRef.textContent;
-      let newWord =
-        wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
+    // ? The first word is already rendered, so the cycle starts by erasing it
+    setTimeout(erase, holdMs);
 
-      while (previousWord === newWord) {
-        newWord =
-          wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
+    function erase() {
+      const text = wordRef.textContent;
+
+      if (text.length > 0) {
+        wordRef.textContent = text.slice(0, -1);
+        setTimeout(erase, stepMs);
+        return;
       }
 
-      animateWord(updateWordRef, newWord, 0);
-    }, animationMs);
-  }
+      type(nextWord(), 0);
+    }
 
-  function animateWord(ref, newWord, index) {
-    if (index < newWord.length) {
-      ref.textContent = newWord.substring(0, index + 1);
-      setTimeout(() => {
-        animateWord(ref, newWord, index + 1);
-      }, 250);
+    function type(word, index) {
+      if (index < word.length) {
+        wordRef.textContent = word.slice(0, index + 1);
+        setTimeout(() => type(word, index + 1), stepMs);
+        return;
+      }
+
+      setTimeout(erase, holdMs);
+    }
+
+    function nextWord() {
+      const previous = wordRef.dataset.word || words[0];
+      const candidates = words.filter((word) => word !== previous);
+      const word = candidates[Math.floor(Math.random() * candidates.length)];
+
+      wordRef.dataset.word = word;
+      return word;
     }
   }
 
