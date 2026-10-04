@@ -17,6 +17,7 @@ function initMainJs() {
   window.addEventListener("resize", handleResize);
 
   skips.forEach((skip) => {
+    skip.addEventListener("keydown", handleSkipKeydown);
     skip.addEventListener("keyup", handleSkip);
   });
 
@@ -55,7 +56,8 @@ function initMainJs() {
     const target = hash.length > 1 && document.getElementById(hash.slice(1));
     const wrapper = target && target.closest(".kd-reveal");
 
-    if (!wrapper) {
+    // ? Place it only while it is still parked, a running reveal must finish on its own
+    if (!wrapper || wrapper.classList.contains("kd-reveal--in")) {
       return;
     }
 
@@ -77,13 +79,18 @@ function initMainJs() {
     }, 200);
   }
 
+  // ? Space scrolls the page a screen before a link reacts, make it act exactly like Enter
+  function handleSkipKeydown(event) {
+    if (event.code === "Space") {
+      event.preventDefault();
+      event.target.click();
+    }
+  }
+
   function handleSkip(event) {
     if (event.code === "Space" || event.code === "Enter") {
       setTimeout(() => {
         event.target.blur();
-        if (event.code === "Space") {
-          window.location.href = event.target.href;
-        }
       }, 500);
     }
   }
