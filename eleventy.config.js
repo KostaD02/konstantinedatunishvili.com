@@ -1,3 +1,5 @@
+const fs = require("fs");
+const path = require("path");
 const eleventySass = require("eleventy-sass");
 const markdownIt = require("markdown-it");
 const markdownAnchor = require("markdown-it-anchor");
@@ -17,6 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   eleventyConfig.addPassthroughCopy("src/_redirects");
+  eleventyConfig.addPassthroughCopy("src/_headers");
 
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
@@ -33,6 +36,16 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("capitalCase", function (string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+  });
+
+  // ! Reads the PNG header only, other formats will return wrong numbers
+  eleventyConfig.addFilter("imageSize", function (src) {
+    const buffer = fs.readFileSync(path.join("src", src));
+    return { width: buffer.readUInt32BE(16), height: buffer.readUInt32BE(20) };
+  });
+
+  eleventyConfig.addFilter("isoDate", function (date) {
+    return new Date(date).toISOString();
   });
 
   eleventyConfig.addFilter("blogDate", function (data) {

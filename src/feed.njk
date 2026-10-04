@@ -1,0 +1,33 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+{%- set newest = collections.post | last -%}
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Konstantine Datunishvili - Blog</title>
+  <subtitle>Posts about front-end development, Angular, Nx and the web.</subtitle>
+  <link href="{{ consts.site }}/feed.xml" rel="self"/>
+  <link href="{{ consts.site }}/blog"/>
+  <updated>{{ newest.page.date | isoDate }}</updated>
+  <id>{{ consts.site }}/</id>
+  <author>
+    <name>{{ consts.name }}</name>
+    <email>{{ consts.email }}</email>
+    <uri>{{ consts.site }}</uri>
+  </author>
+  {%- for post in collections.post | reverse %}
+  <entry>
+    <title>{{ post.data.title | escape }}</title>
+    <link href="{{ consts.site }}/blog/{{ post.page.fileSlug }}/"/>
+    <id>{{ consts.site }}/blog/{{ post.page.fileSlug }}/</id>
+    <updated>{{ post.page.date | isoDate }}</updated>
+    <published>{{ post.page.date | isoDate }}</published>
+    <summary>{{ post.data.description | escape }}</summary>
+    {%- for tag in post.data.tags %}{% if tag !== "post" %}
+    <category term="{{ tag | escape }}"/>
+    {%- endif %}{% endfor %}
+    <content type="html">{{ post.templateContent | escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

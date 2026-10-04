@@ -1,13 +1,20 @@
 ---
 layout: "base.njk"
+ogType: "article"
+schemaType: "BlogPosting"
 ---
 
+{% set imageSize = image | imageSize %}
 <section class="kd-section kd-measure-md">
-  <article
-    class="kd-prose"
-    typeof="BlogPosting"
-    resource="https://konstantinedatunishvili.com/blog/{{ page.fileSlug }}">
-    <img src="{{ image }}" alt="{{ imageAlt }}">
+  <article class="kd-prose">
+    <img
+      class="kd-h-auto"
+      src="{{ image }}"
+      alt="{{ imageAlt }}"
+      width="{{ imageSize.width }}"
+      height="{{ imageSize.height }}"
+      fetchpriority="high"
+      decoding="async"/>
     <h1>{{ title }}</h1>
     {{ content | safe }}
   </article>

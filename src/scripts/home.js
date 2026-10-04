@@ -1,106 +1,145 @@
 function initHomeJs() {
-  const updateWordRef = document.querySelector("#update-word");
-  const experienceJobRef = document.querySelector("#job_description");
-  const experiencesRefs = document.querySelectorAll("div[data-experience]");
-  const experienceButtonRefs = document.querySelectorAll(
-    "button[data-experience-index]"
-  );
+  initWordCycle();
+  initExperienceTabs();
 
-  const wordsToUpdate = ["create", "maintain", "develop"];
-  const experiences = [];
+  function initWordCycle() {
+    const updateWordRef = document.querySelector("#update-word");
 
-  const animationMs = 5000;
-
-  const interval = setInterval(updateWord, animationMs);
-
-  experiencesRefs.forEach((experienceRef, index) => {
-    const experience = {};
-
-    for (const child of experienceRef.children) {
-      const name = child.getAttribute("data-name");
-      child.textContent = child.textContent.trim();
-
-      if (name === "descriptions") {
-        if (!experience[name]) {
-          experience.descriptions = [];
-        }
-
-        experience.descriptions.push(child.textContent);
-        continue;
-      }
-
-      experience[name] = child.textContent || null;
-    }
-
-    experiences.push(experience);
-
-    if (index + 1 === experiencesRefs.length) {
-      initExperienceSwipe();
-    }
-  });
-
-  function updateWord() {
-    if (!updateWordRef) {
-      clearInterval(interval);
+    // ? Respect the user's motion preference, the cycle is decoration only
+    if (!updateWordRef || prefersReducedMotion()) {
       return;
     }
 
-    const previousWord = updateWordRef.textContent;
-    let newWord =
-      wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
+    const wordsToUpdate = ["create", "maintain", "develop"];
+    const animationMs = 5000;
 
-    while (previousWord === newWord) {
-      newWord = wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
-    }
+    setInterval(() => {
+      const previousWord = updateWordRef.textContent;
+      let newWord =
+        wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
 
-    animateWord(newWord, 0);
+      while (previousWord === newWord) {
+        newWord =
+          wordsToUpdate[Math.floor(Math.random() * wordsToUpdate.length)];
+      }
+
+      animateWord(updateWordRef, newWord, 0);
+    }, animationMs);
   }
 
-  function animateWord(newWord, index) {
+  function animateWord(ref, newWord, index) {
     if (index < newWord.length) {
-      updateWordRef.textContent = newWord.substring(0, index + 1);
+      ref.textContent = newWord.substring(0, index + 1);
       setTimeout(() => {
-        animateWord(newWord, index + 1);
+        animateWord(ref, newWord, index + 1);
       }, 250);
     }
   }
 
-  function initExperienceSwipe() {
-    experienceButtonRefs.forEach((button, index, self) => {
-      button.addEventListener("click", function () {
-        const experience = experiences.find(
-          (experience) => experience.name === this.textContent.trim()
-        );
-        const h3 = experienceJobRef.querySelector("h3");
-        const p = experienceJobRef.querySelector("p");
-        const ul = experienceJobRef.querySelector("ul");
-        h3.textContent = experience.position;
-        if (experience.url) {
-          h3.innerHTML += `
-            <span class="kd-text-accent">@<a
-                class="kd-link"
-                target="_blank"
-                href="${experience.url}"
-              >${experience.name}</a
-              ></span>
-        `;
-        }
-        p.innerHTML = `${experience.startDate} - ${experience.endDate}`;
-        ul.innerHTML = "";
-        experience.descriptions.forEach((description) => {
-          ul.innerHTML += `<li><span>${description}</span></li>`;
-        });
-        self.forEach((button) => {
-          button.classList.remove("kd-active");
-          button.setAttribute("aria-selected", "false");
-        });
-        this.classList.add("kd-active");
-        this.setAttribute("aria-selected", "true");
-      });
-      if (index === 0) {
-        button.click();
-      }
+  function initExperienceTabs() {
+    const dataRef = document.querySelector("#experiences-data");
+    const panel = document.querySelector("#job_description");
+    const tabs = Array.from(
+      document.querySelectorAll("button[data-experience-index]")
+    );
+
+    if (!dataRef || !panel || !tabs.length) {
+      return;
+    }
+
+    const experiences = JSON.parse(dataRef.textContent);
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => selectTab(tab));
+      tab.addEventListener("keydown", handleTabKeydown);
     });
+
+    function handleTabKeydown(event) {
+      const keys = {
+        ArrowDown: 1,
+        ArrowRight: 1,
+        ArrowUp: -1,
+        ArrowLeft: -1,
+      };
+
+      if (event.key === "Home" || event.key === "End") {
+        event.preventDefault();
+        selectTab(event.key === "Home" ? tabs[0] : tabs[tabs.length - 1], true);
+        return;
+      }
+
+      const step = keys[event.key];
+
+      if (!step) {
+        return;
+      }
+
+      event.preventDefault();
+      const next = (tabs.indexOf(event.currentTarget) + step + tabs.length) % tabs.length;
+      selectTab(tabs[next], true);
+    }
+
+    function selectTab(tab, focus = false) {
+      const experience = experiences[Number(tab.dataset.experienceIndex)];
+
+      if (!experience) {
+        return;
+      }
+
+      tabs.forEach((item) => {
+        const isCurrent = item === tab;
+        item.classList.toggle("kd-active", isCurrent);
+        item.setAttribute("aria-selected", String(isCurrent));
+        item.setAttribute("tabindex", isCurrent ? "0" : "-1");
+      });
+
+      panel.setAttribute("aria-labelledby", tab.id);
+      renderExperience(experience);
+
+      if (focus) {
+        tab.focus();
+      }
+    }
+
+    function renderExperience(experience) {
+      const heading = panel.querySelector("h3");
+      const dates = panel.querySelector("p");
+      const list = panel.querySelector("ul");
+
+      heading.textContent = experience.position;
+
+      if (experience.url) {
+        const wrapper = document.createElement("span");
+        wrapper.className = "kd-text-accent";
+        wrapper.append("@");
+
+        const link = document.createElement("a");
+        link.className = "kd-link";
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.href = experience.url;
+        link.textContent = experience.name;
+
+        wrapper.appendChild(link);
+        heading.append(" ", wrapper);
+      }
+
+      dates.textContent = `${experience.startDate} - ${experience.endDate}`;
+
+      list.replaceChildren(
+        ...experience.descriptions.map((description) => {
+          const item = document.createElement("li");
+          const span = document.createElement("span");
+          span.textContent = description;
+          item.appendChild(span);
+          return item;
+        })
+      );
+    }
+  }
+
+  function prefersReducedMotion() {
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   }
 }
 

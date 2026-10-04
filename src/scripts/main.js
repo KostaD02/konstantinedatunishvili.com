@@ -7,7 +7,9 @@ function initMainJs() {
   const skips = document.querySelectorAll("a.kd-skip");
   const scrollUp = document.querySelector("#scroll-up");
 
-  let lastScrollPos = 0;
+  let lastScrollPos = null;
+  let anchorScrollTimer = null;
+  let isAnchorScroll = false;
 
   burger.addEventListener("click", handleMenuClick);
   scrollUp.addEventListener("click", handleScrollUp);
@@ -17,6 +19,33 @@ function initMainJs() {
   skips.forEach((skip) => {
     skip.addEventListener("keyup", handleSkip);
   });
+
+  document.addEventListener("click", handleAnchorClick);
+  window.addEventListener("hashchange", holdAnchorScroll);
+
+  if (window.location.hash) {
+    holdAnchorScroll();
+  }
+
+  // ? Sync with the position the page actually loaded at, restored or not
+  handleScroll();
+
+  function handleAnchorClick(event) {
+    const link = event.target.closest && event.target.closest("a");
+
+    // ? Jumping to an anchor scrolls the page for the user, that is not them scrolling
+    if (link && /^(\/)?#/.test(link.getAttribute("href") || "")) {
+      holdAnchorScroll();
+    }
+  }
+
+  function holdAnchorScroll() {
+    isAnchorScroll = true;
+    clearTimeout(anchorScrollTimer);
+    anchorScrollTimer = setTimeout(() => {
+      isAnchorScroll = false;
+    }, 200);
+  }
 
   function handleSkip(event) {
     if (event.code === "Space" || event.code === "Enter") {
@@ -32,11 +61,18 @@ function initMainJs() {
   function handleScroll() {
     // ? iOS rubber-band overscroll reports a negative scrollTop, clamp it away
     const scrollPosition = Math.max(0, document.documentElement.scrollTop);
+    // ? The first event can be the browser restoring scroll, never read that as scrolling down
+    const isFirstEvent = lastScrollPos === null;
+
+    // ? Keep holding while the smooth scroll is still running
+    if (isAnchorScroll) {
+      holdAnchorScroll();
+    }
 
     if (scrollPosition === 0) {
       navbar.classList.remove("kd-navbar--hidden");
       navbar.classList.remove("kd-navbar--scrolled");
-    } else if (scrollPosition > lastScrollPos) {
+    } else if (!isFirstEvent && !isAnchorScroll && scrollPosition > lastScrollPos) {
       navbar.classList.add("kd-navbar--hidden");
       navbar.classList.add("kd-navbar--scrolled");
     } else {
@@ -61,6 +97,16 @@ function initMainJs() {
     }
   }
 
+  function hasOpenedDrawer() {
+    try {
+      const opened = sessionStorage.getItem("kd-drawer-intro");
+      sessionStorage.setItem("kd-drawer-intro", "1");
+      return Boolean(opened);
+    } catch (error) {
+      return false;
+    }
+  }
+
   function isMenuOpen() {
     return burger.getAttribute("aria-expanded") === "true";
   }
@@ -78,6 +124,14 @@ function initMainJs() {
       panel.classList.add("kd-drawer__panel");
       panel.classList.add("kd-stagger");
       panel.innerHTML = navbar.querySelector(".kd-navbar__menu").innerHTML;
+
+      if (hasOpenedDrawer()) {
+        panel.classList.remove("kd-stagger");
+        panel
+          .querySelectorAll(".kd-animate-drop-in")
+          .forEach((item) => item.classList.remove("kd-animate-drop-in"));
+      }
+
       drawer.appendChild(panel);
 
       drawer.addEventListener("click", (event) => {

@@ -1,0 +1,55 @@
+{% if page.url === '/' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": {{ (consts.site + "/#person") | dump | safe }},
+      "name": {{ consts.name | dump | safe }},
+      "alternateName": {{ consts.alternateName | dump | safe }},
+      "jobTitle": {{ consts.jobTitle | dump | safe }},
+      "email": {{ ("mailto:" + consts.email) | dump | safe }},
+      "url": {{ consts.site | dump | safe }},
+      "image": {{ (consts.site + "/assets/images/personal_image.png") | dump | safe }},
+      "sameAs": [
+        {{ consts.url.github | dump | safe }},
+        {{ consts.url.linkedin | dump | safe }},
+        {{ consts.url.facebook | dump | safe }}
+      ],
+      "knowsAbout": [{% for skill in skills %}{{ skill | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+      "worksFor": {
+        "@type": "Organization",
+        "name": {{ experiences[0].name | dump | safe }},
+        "url": {{ experiences[0].url | dump | safe }}
+      }
+    }
+  </script>
+{% elif schemaType === "BlogPosting" %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ (consts.site + page.url) | dump | safe }}
+      },
+      "headline": {{ title | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "image": {{ (consts.site + image) | dump | safe }},
+      "datePublished": {{ page.date | isoDate | dump | safe }},
+      "dateModified": {{ page.date | isoDate | dump | safe }},
+      "keywords": [{% for chip in chips %}{{ chip | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": {{ (consts.site + "/#person") | dump | safe }},
+        "name": {{ consts.name | dump | safe }},
+        "url": {{ consts.site | dump | safe }}
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": {{ (consts.site + "/#person") | dump | safe }},
+        "name": {{ consts.name | dump | safe }}
+      }
+    }
+  </script>
+{% endif %}

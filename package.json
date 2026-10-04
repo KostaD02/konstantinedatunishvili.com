@@ -4,6 +4,7 @@
   "description": "Personal website",
   "scripts": {
     "start": "npm-run-all --parallel watch:*",
+    "prebuild": "npm run generate:sitemap",
     "build": "npm-run-all build:*",
     "build:eleventy": "eleventy",
     "watch:eleventy": "eleventy --serve",

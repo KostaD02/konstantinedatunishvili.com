@@ -1,5 +1,6 @@
 ---
 layout: "base.njk"
+description: "Konstantine Datunishvili - Senior Front-End Developer, educator and tech enthusiast. Angular, Nx and full-stack work, plus a blog about modern web development."
 ---
 
 <section
@@ -7,9 +8,7 @@ layout: "base.njk"
   class="kd-section kd-section--flush kd-h-viewport kd-measure-xs kd-hero kd-stagger"
   style="--kd-animate-duration: 1s;">
   <p class="kd-hero__eyebrow kd-animate-fade-up">Hi, my name is</p>
-  <h1 class="kd-hero__title kd-animate-fade-up">Konstantine Datunishvili
-    <span hidden class="kd-d-none">კონსტანტინე დათუნიშვილი</span>
-  </h1>
+  <h1 class="kd-hero__title kd-animate-fade-up">Konstantine Datunishvili</h1>
   <h2 class="kd-hero__subtitle kd-animate-fade-up">I
     <span id="update-word">create</span>
     websites.
@@ -30,7 +29,7 @@ layout: "base.njk"
       </p>
       <p>
         I taught at
-        <a href="{{ urls.step }}" target="_blank">IT STEP Academy</a>
+        <a href="{{ urls.step }}" target="_blank" rel="noopener">IT STEP Academy</a>
         from September 2021 to September 2024 and had previously worked on various projects for different companies from time to
         time.
       </p>
@@ -63,48 +62,41 @@ layout: "base.njk"
       {% for experience in experiences %}
         <button
           type="button"
-          class="kd-tabs__tab"
+          id="experience-tab-{{ loop.index }}"
+          class="kd-tabs__tab {% if loop.first %}kd-active{% endif %}"
           role="tab"
-          aria-selected="false"
+          aria-selected="{% if loop.first %}true{% else %}false{% endif %}"
           aria-controls="job_description"
-          data-experience-index="{{ loop.index }}">
+          tabindex="{% if loop.first %}0{% else %}-1{% endif %}"
+          data-experience-index="{{ loop.index0 }}">
           {{ experience.name }}
         </button>
       {% endfor %}
     </div>
-    <div class="kd-grow-1 kd-pt-3" id="job_description" role="tabpanel" tabindex="0" style="min-height: 20rem;">
-      <h3 class="kd-fs-xxl kd-fw-medium">Senior Front-End Developer
-        <span class="kd-text-accent">@<a class="kd-link" target="_blank" href="{{ urls.etoro }}">eToro</a></span>
+    {% set current = experiences[0] %}
+    <div
+      class="kd-grow-1 kd-pt-3"
+      id="job_description"
+      role="tabpanel"
+      tabindex="0"
+      aria-labelledby="experience-tab-1"
+      style="min-height: 20rem;">
+      <h3 class="kd-fs-xxl kd-fw-medium">{{ current.position }}
+        {% if current.url %}
+          <span class="kd-text-accent">@<a class="kd-link" target="_blank" rel="noopener" href="{{ current.url }}">{{ current.name }}</a></span>
+        {% endif %}
       </h3>
-      <p class="kd-fs-xs kd-mb-4">May 2024 - Present</p>
+      <p class="kd-fs-xs kd-mb-4">{{ current.startDate }} - {{ current.endDate }}</p>
       <ul class="kd-list">
-        <li>
-          <span>Improving and maintaining one of the world’s leading broker platforms.</span>
-        </li>
-        <li>
-          <span>Working back-to-back with the designers, product managers, and analysts to deliver new features.</span>
-        </li>
-        <li>
-          <span>Delivering impactful A/B tests, neatly measured with analytics.</span>
-        </li>
-        <li>
-          <span>Enhancing our codebase with Angular and Nx, and extending applications to mobile platforms using Cordova.</span>
-        </li>
+        {% for description in current.descriptions %}
+          <li>
+            <span>{{ description }}</span>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </div>
-  {% for experience in experiences %}
-    <div hidden class="kd-d-none" data-experience="{{ loop.index }}">
-      <span data-name="name">{{ experience.name }}</span>
-      <span data-name="position">{{ experience.position }}</span>
-      <span data-name="startDate">{{ experience.startDate }}</span>
-      <span data-name="endDate">{{ experience.endDate }}</span>
-      <span data-name="url">{{ experience.url }}</span>
-      {% for description in experience.descriptions %}
-        <span data-name="descriptions">{{ description }}</span>
-      {% endfor %}
-    </div>
-  {% endfor %}
+  <script type="application/json" id="experiences-data">{{ experiences | dump | safe }}</script>
 </section>
 <section id="projects" class="kd-section kd-py-7 kd-measure-xl">
   <a class="kd-skip" href="/#noteworthy-projects">Skip to projects</a>
@@ -147,7 +139,7 @@ layout: "base.njk"
           <img src="./assets/icons/folder.svg" alt="" width="40" height="40"/>
           <div class="kd-d-flex kd-items-center">
             {% if project.url.github %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.github }}" target="_blank">
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.github }}" target="_blank" rel="noopener">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -165,7 +157,7 @@ layout: "base.njk"
               </a>
             {% endif %}
             {% if project.url.live %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.live }}" target="_blank">
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.live }}" target="_blank" rel="noopener">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   role="img"
@@ -183,7 +175,7 @@ layout: "base.njk"
               </a>
             {% endif %}
             {% if project.url.npm %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.npm }}" target="_blank">
+              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.npm }}" target="_blank" rel="noopener">
                 <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="currentColor">
                   <title>Npm</title>
                   <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160
@@ -198,7 +190,7 @@ layout: "base.njk"
             <a
               class="kd-card__title kd-link--anchor kd-stretch kd-fs-xxl"
               href="{% if project.url.live %}{{ project.url.live }}{% else %}{{ project.url.github }}{% endif %}"
-              target="_blank">
+              target="_blank" rel="noopener">
               {{ project.name }}
             </a>
           </h3>
