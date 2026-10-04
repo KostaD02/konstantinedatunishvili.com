@@ -14,13 +14,6 @@ function initHomeJs() {
     const holdMs = 5000;
     const stepMs = 250;
 
-    reserveWidth();
-    window.addEventListener("resize", reserveWidth);
-
-    if (document.fonts) {
-      document.fonts.ready.then(reserveWidth);
-    }
-
     // ? The first word is already rendered, so the cycle starts by erasing it
     setTimeout(erase, holdMs);
 
@@ -44,27 +37,6 @@ function initHomeJs() {
       }
 
       setTimeout(erase, holdMs);
-    }
-
-    // ? Typing must never move the text after the word, so the box always fits the longest one
-    function reserveWidth() {
-      const probe = document.createElement("span");
-
-      probe.style.position = "absolute";
-      probe.style.visibility = "hidden";
-      probe.style.whiteSpace = "nowrap";
-      wordRef.appendChild(probe);
-
-      const width = Math.max(
-        ...words.map((word) => {
-          probe.textContent = word;
-          return probe.getBoundingClientRect().width;
-        })
-      );
-
-      probe.remove();
-      wordRef.style.display = "inline-block";
-      wordRef.style.minWidth = `${Math.ceil(width)}px`;
     }
 
     function nextWord() {
