@@ -18,7 +18,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
     grow.
   </p>
 </section>
-<section id="about" class="kd-section kd-py-7 kd-measure-lg" data-aos="slide-up" data-aos-duration="1000">
+<section id="about" class="kd-section kd-py-7 kd-measure-lg kd-reveal kd-animate-fade-up" style="--kd-animate-duration: 1s;">
   <a class="kd-skip" href="/#experience">Skip to experience</a>
   <div class="kd-split kd-split--md">
     <article class="kd-prose">
@@ -54,7 +54,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
     </figure>
   </div>
 </section>
-<section id="experience" class="kd-section kd-py-7 kd-measure-sm" data-aos="slide-up" data-aos-duration="1000">
+<section id="experience" class="kd-section kd-py-7 kd-measure-sm kd-reveal kd-animate-fade-up" style="--kd-animate-duration: 1s;">
   <a class="kd-skip" href="/#projects">Skip to work</a>
   <h2 class="kd-heading">Where I've Worked</h2>
   <div class="kd-d-flex kd-d-sm-block kd-items-start kd-gap-4">
@@ -103,7 +103,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
   <h2 class="kd-heading">Some Things I've Built</h2>
   <div class="kd-d-grid kd-gap-7">
     {% for work in works %}
-      <article class="kd-feature {% if loop.index % 2 === 0 %}kd-feature--reverse{% endif %}" data-aos="slide-up" data-aos-duration="1000">
+      <article class="kd-feature kd-reveal kd-animate-fade-up {% if loop.index % 2 === 0 %}kd-feature--reverse{% endif %}" style="--kd-animate-duration: 1s;">
         <a
           href="{{ work.url }}"
           target="{% if work.isExternal %} _blank {% else %} _self {% endif %}"
@@ -132,7 +132,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
 <section id="noteworthy-projects" class="kd-section kd-py-7 kd-measure-xl">
   <a class="kd-skip" href="/#contact">Skip to contact</a>
   <h2 class="kd-heading kd-heading--center kd-heading--bare">Other Noteworthy Projects</h2>
-  <div class="kd-grid-auto" data-aos="slide-up" data-aos-duration="1000">
+  <div class="kd-grid-auto kd-reveal kd-animate-fade-up" style="--kd-animate-duration: 1s;">
     {% for project in projects | aFilter("show_in_noteworthy_projects") %}
       <article class="kd-card kd-card--lift">
         <div class="kd-card__header">
@@ -210,7 +210,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
     <a class="kd-btn kd-btn--outline" href="/archive">View Archive</a>
   </div>
 </section>
-<section id="contact" class="kd-section kd-py-7 kd-measure-xxs kd-text-center" data-aos="slide-up" data-aos-duration="2000">
+<section id="contact" class="kd-section kd-py-7 kd-measure-xxs kd-text-center kd-reveal kd-animate-fade-up" style="--kd-animate-duration: 2s;">
   <h2
     class="kd-heading kd-heading--center kd-heading--bare"
     style="--kd-heading-font-size: var(--kd-font-size-fluid-h1);">Get In Touch</h2>

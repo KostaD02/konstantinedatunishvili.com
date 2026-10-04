@@ -1,5 +1,4 @@
 function initMainJs() {
-  initAOS();
   helloFromConsole();
 
   const navbar = document.querySelector(".kd-navbar");
@@ -97,16 +96,6 @@ function initMainJs() {
     }
   }
 
-  function hasOpenedDrawer() {
-    try {
-      const opened = sessionStorage.getItem("kd-drawer-intro");
-      sessionStorage.setItem("kd-drawer-intro", "1");
-      return Boolean(opened);
-    } catch (error) {
-      return false;
-    }
-  }
-
   function isMenuOpen() {
     return burger.getAttribute("aria-expanded") === "true";
   }
@@ -123,15 +112,8 @@ function initMainJs() {
       const panel = document.createElement("ul");
       panel.classList.add("kd-drawer__panel");
       panel.classList.add("kd-stagger");
+      panel.classList.add("kd-intro");
       panel.innerHTML = navbar.querySelector(".kd-navbar__menu").innerHTML;
-
-      if (hasOpenedDrawer()) {
-        panel.classList.remove("kd-stagger");
-        panel
-          .querySelectorAll(".kd-animate-drop-in")
-          .forEach((item) => item.classList.remove("kd-animate-drop-in"));
-      }
-
       drawer.appendChild(panel);
 
       drawer.addEventListener("click", (event) => {
@@ -159,18 +141,6 @@ function initMainJs() {
 
     document.body.style.overflow = "auto";
     navbar.classList.remove("kd-navbar--bare");
-  }
-
-  function initAOS() {
-    try {
-      AOS.init({
-        once: true,
-      });
-    } catch (err) {
-      // ? If AOS is not loaded, remove the CSS file otherwise it will mess up positions
-      document.querySelector("#aos-css").remove();
-      console.log("Cannot init AOS, no animation on scroll :(");
-    }
   }
 
   function handleScrollUp() {
