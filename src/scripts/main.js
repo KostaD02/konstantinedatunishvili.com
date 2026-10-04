@@ -7,8 +7,7 @@ function initMainJs() {
   const skips = document.querySelectorAll("a.kd-skip");
   const scrollUp = document.querySelector("#scroll-up");
 
-  // ? The browser restores scroll on reload and back, that is not a downward scroll
-  let lastScrollPos = Math.max(0, document.documentElement.scrollTop);
+  let lastScrollPos = null;
 
   burger.addEventListener("click", handleMenuClick);
   scrollUp.addEventListener("click", handleScrollUp);
@@ -18,6 +17,9 @@ function initMainJs() {
   skips.forEach((skip) => {
     skip.addEventListener("keyup", handleSkip);
   });
+
+  // ? Sync with the position the page actually loaded at, restored or not
+  handleScroll();
 
   function handleSkip(event) {
     if (event.code === "Space" || event.code === "Enter") {
@@ -33,11 +35,13 @@ function initMainJs() {
   function handleScroll() {
     // ? iOS rubber-band overscroll reports a negative scrollTop, clamp it away
     const scrollPosition = Math.max(0, document.documentElement.scrollTop);
+    // ? The first event can be the browser restoring scroll, never read that as scrolling down
+    const isFirstEvent = lastScrollPos === null;
 
     if (scrollPosition === 0) {
       navbar.classList.remove("kd-navbar--hidden");
       navbar.classList.remove("kd-navbar--scrolled");
-    } else if (scrollPosition > lastScrollPos) {
+    } else if (!isFirstEvent && scrollPosition > lastScrollPos) {
       navbar.classList.add("kd-navbar--hidden");
       navbar.classList.add("kd-navbar--scrolled");
     } else {
