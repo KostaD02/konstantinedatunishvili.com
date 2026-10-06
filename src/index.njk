@@ -140,10 +140,10 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
 <section id="noteworthy-projects" class="kd-section kd-py-7 kd-measure-xl">
   <a class="kd-skip" href="/#contact">Skip to contact</a>
   <h2 class="kd-heading kd-heading--center kd-heading--bare">Other Noteworthy Projects</h2>
-  <div class="kd-reveal">
-    <div class="kd-grid-auto kd-animate-fade-up" style="--kd-animate-duration: 1s;">
-      {% for project in projects | aFilter("show_in_noteworthy_projects") %}
-        <article class="kd-card kd-card--lift">
+  <div class="kd-grid-auto" style="--kd-animate-duration: 1s; --kd-animate-fill: backwards;">
+    {% for project in projects | aFilter("show_in_noteworthy_projects") %}
+      <div class="kd-reveal kd-d-grid">
+        <article class="kd-card kd-card--lift kd-animate-fade-up" style="--kd-animate-delay: {{ (loop.index0 % 3) * 150 }}ms;">
           <div class="kd-card__header">
             <img src="./assets/icons/folder.svg" alt="" width="40" height="40"/>
             <div class="kd-d-flex kd-items-center">
@@ -213,8 +213,8 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
             {% endfor %}
           </ul>
         </article>
-      {% endfor %}
-    </div>
+      </div>
+    {% endfor %}
   </div>
   <div class="kd-flex-center kd-mt-5">
     <a class="kd-btn kd-btn--outline" href="/archive">View Archive</a>
