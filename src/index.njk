@@ -140,79 +140,80 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
 <section id="noteworthy-projects" class="kd-section kd-py-7 kd-measure-xl">
   <a class="kd-skip" href="/#contact">Skip to contact</a>
   <h2 class="kd-heading kd-heading--center kd-heading--bare">Other Noteworthy Projects</h2>
-  {# ! backwards fill, a finished animation would otherwise pin transform and kill the hover lift #}
-  <div class="kd-grid-auto kd-reveal kd-stagger" style="--kd-animate-duration: 1s; --kd-animate-fill: backwards;">
+  <div class="kd-grid-auto" style="--kd-animate-duration: 1s; --kd-animate-fill: backwards;">
     {% for project in projects | aFilter("show_in_noteworthy_projects") %}
-      <article class="kd-card kd-card--lift kd-animate-fade-up">
-        <div class="kd-card__header">
-          <img src="./assets/icons/folder.svg" alt="" width="40" height="40"/>
-          <div class="kd-d-flex kd-items-center">
-            {% if project.url.github %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.github }}" target="_blank" rel="noopener">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <title>GitHub</title>
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07
-                    0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5
-                    3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                </svg>
-              </a>
-            {% endif %}
-            {% if project.url.live %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.live }}" target="_blank" rel="noopener">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  role="img"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round">
-                  <title>External Link</title>
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            {% endif %}
-            {% if project.url.npm %}
-              <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.npm }}" target="_blank" rel="noopener">
-                <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="currentColor">
-                  <title>Npm</title>
-                  <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160
-                  0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"/>
-                </svg>
-              </a>
-            {% endif %}
+      <div class="kd-reveal kd-d-grid">
+        <article class="kd-card kd-card--lift kd-animate-fade-up" style="--kd-animate-delay: {{ (loop.index0 % 3) * 150 }}ms;">
+          <div class="kd-card__header">
+            <img src="./assets/icons/folder.svg" alt="" width="40" height="40"/>
+            <div class="kd-d-flex kd-items-center">
+              {% if project.url.github %}
+                <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.github }}" target="_blank" rel="noopener">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <title>GitHub</title>
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07
+                      0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5
+                      3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              {% endif %}
+              {% if project.url.live %}
+                <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.live }}" target="_blank" rel="noopener">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <title>External Link</title>
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+              {% endif %}
+              {% if project.url.npm %}
+                <a class="kd-icon-link kd-pos-relative kd-z-raised" href="{{ project.url.npm }}" target="_blank" rel="noopener">
+                  <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 576 512" fill="currentColor">
+                    <title>Npm</title>
+                    <path d="M288 288h-32v-64h32v64zm288-128v192H288v32H160v-32H0V160h576zm-416 32H32v128h64v-96h32v96h32V192zm160
+                    0H192v160h64v-32h64V192zm224 0H352v128h64v-96h32v96h32v-96h32v96h32V192z"/>
+                  </svg>
+                </a>
+              {% endif %}
+            </div>
           </div>
-        </div>
-        <div class="kd-card__body">
-          <h3 class="kd-m-0">
-            <a
-              class="kd-card__title kd-link--anchor kd-stretch kd-fs-xxl"
-              href="{% if project.url.live %}{{ project.url.live }}{% else %}{{ project.url.github }}{% endif %}"
-              target="_blank" rel="noopener">
-              {{ project.name }}
-            </a>
-          </h3>
-          <p class="kd-card__text kd-fs-md">
-            {{ project.description }}
-          </p>
-        </div>
-        <ul class="kd-card__footer kd-list-plain kd-flex-wrap kd-gap-x-3">
-          {% for stack in project.stacks | aSlice(0, 4) %}
-            <li class="kd-fs-xxs kd-text-muted">{{ stack }}</li>
-          {% endfor %}
-        </ul>
-      </article>
+          <div class="kd-card__body">
+            <h3 class="kd-m-0">
+              <a
+                class="kd-card__title kd-link--anchor kd-stretch kd-fs-xxl"
+                href="{% if project.url.live %}{{ project.url.live }}{% else %}{{ project.url.github }}{% endif %}"
+                target="_blank" rel="noopener">
+                {{ project.name }}
+              </a>
+            </h3>
+            <p class="kd-card__text kd-fs-md">
+              {{ project.description }}
+            </p>
+          </div>
+          <ul class="kd-card__footer kd-list-plain kd-flex-wrap kd-gap-x-3">
+            {% for stack in project.stacks | aSlice(0, 4) %}
+              <li class="kd-fs-xxs kd-text-muted">{{ stack }}</li>
+            {% endfor %}
+          </ul>
+        </article>
+      </div>
     {% endfor %}
   </div>
   <div class="kd-flex-center kd-mt-5">
