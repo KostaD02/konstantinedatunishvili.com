@@ -1,5 +1,16 @@
 [
   {
+    "name": "CI",
+    "description": "Reusable GitHub Actions workflows for my repositories",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/kostaD02/ci"
+    },
+    "stacks": ["GitHub Actions", "CI/CD"],
+    "show_in_noteworthy_projects": true
+  },
+  {
     "name": "Biolume",
     "description": "A deep-sea theme for VS Code: a mint glow on deep navy",
     "year": 2026,
@@ -68,7 +79,7 @@
       "github": "https://github.com/educata/educata-style"
     },
     "stacks": ["SCSS", "storybook"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Monotor",
