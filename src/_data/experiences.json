@@ -6,8 +6,8 @@
     "endDate": "Present",
     "url": "https://www.etoro.com/",
     "descriptions": [
-      "Improving and maintaining one of the worlds leading broker platforms.",
-      "Working back-to-back with the designers, product managers, and analysts to deliver new features.",
+      "Improving and maintaining one of the world's leading broker platforms.",
+      "Working back-to-back with designers, product managers, and analysts to deliver new features.",
       "Delivering impactful A/B tests, neatly measured with analytics.",
       "Developing extensible infra libraries used throughout the whole project.",
       "Working with Cordova to deliver an efficient native application.",
@@ -30,11 +30,11 @@
   {
     "name": "Freelance",
     "position": "Freelance projects",
-    "startDate": "Mar 2021",
+    "startDate": "May 2021",
     "endDate": "May 2024",
     "url": null,
     "descriptions": [
-      "Delivering and maintaining full-stack software to clients in Georgia."
+      "Delivered and maintained full-stack software for clients in Georgia."
     ]
   }
 ]
