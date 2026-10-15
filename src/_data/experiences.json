@@ -6,11 +6,11 @@
     "endDate": "Present",
     "url": "https://www.etoro.com/",
     "descriptions": [
-      "Improving and maintaining one of the world’s leading broker platforms.",
+      "Improving and maintaining one of the worlds leading broker platforms.",
       "Working back-to-back with the designers, product managers, and analysts to deliver new features.",
       "Delivering impactful A/B tests, neatly measured with analytics.",
       "Developing extensible infra libraries used throughout the whole project.",
-      "Working with cordova do deliver efficient native application.",
+      "Working with Cordova to deliver an efficient native application.",
       "Writing internal documentation for library usage and maintenance."
     ]
   },
@@ -21,22 +21,10 @@
     "endDate": "Sep 2024",
     "url": "https://itstep.org/",
     "descriptions": [
-      "Teaching the fundamentals of front-end development.",
-      "I cover topics such as HTML, CSS, SCSS, Bootstrap, JavaScript, Angular, Angular Material, and provide a brief introduction to RxJS.",
-      "Working closely with the management to improve the teaching process.",
-      "Completely revamping the front-end syllabus based on modern technological trends and demands"
-    ]
-  },
-  {
-    "name": "Payever",
-    "position": "Front-End Developer",
-    "startDate": "Oct 2022",
-    "endDate": "Jan 2023",
-    "url": "https://payever.org/",
-    "descriptions": [
-      "Maintaining a monolith Ecommerce app “CommerceOS“",
-      "Working on several apps simultaneously.",
-      "Documenting the entire project architecture."
+      "Taught the fundamentals of front-end development.",
+      "Covered HTML, CSS, SCSS, Bootstrap, JavaScript, Angular, Angular Material, and an introduction to RxJS.",
+      "Worked closely with management to improve the teaching process.",
+      "Completely revamped the front-end syllabus based on modern technology trends and industry demands."
     ]
   },
   {

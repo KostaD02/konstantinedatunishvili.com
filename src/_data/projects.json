@@ -1,5 +1,16 @@
 [
   {
+    "name": "QuickInspect",
+    "description": "Alt + hover element inspector for Chrome. Selectors, Playwright locators, box model, styles, a11y and events without DevTools.",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/QuickInspect"
+    },
+    "stacks": ["CRXJS", "Chrome Extension"],
+    "show_in_noteworthy_projects": false
+  },
+  {
     "name": "CI",
     "description": "Reusable GitHub Actions workflows for my repositories",
     "year": 2026,
@@ -55,8 +66,19 @@
       "github": "https://github.com/KostaD02/MirrorTab",
       "live": "https://chromewebstore.google.com/detail/mirrortab/bljopdbabofhephejfdlmclnjjipihpb"
     },
-    "stacks": ["CRXJS"],
+    "stacks": ["CRXJS", "Chrome Extension"],
     "show_in_noteworthy_projects": true
+  },
+  {
+    "name": "Personal-Lab",
+    "description": "A documented journey of building a clean, reproducible self-hosted environment.",
+    "year": 2026,
+    "made_at": null,
+    "url": {
+      "github": "https://github.com/KostaD02/personal-lab"
+    },
+    "stacks": ["Linux", "Shell", "Docker"],
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Steam-Idler-Legacy",

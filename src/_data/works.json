@@ -4,7 +4,7 @@
     "title": "EverREST",
     "url": "https://everrest.educata.dev/",
     "backgroundUrl": "./assets/images/everrest.jpg",
-    "description": "EveREST was built to assist front-end developers in learning to build websites more efficiently. The concept revolves around providing free API calls achievable through a REST API. This project empowers users to employ CRUD operations at no cost. Users can develop shopping websites, implement cart functionalities, manage authentication, generate QR codes, retrieve random quotes, and much more.",
+    "description": "EverREST was built to assist front-end developers in learning to build websites more efficiently. The concept revolves around providing free API calls achievable through a REST API. This project empowers users to employ CRUD operations at no cost. Users can develop shopping websites, implement cart functionalities, manage authentication, generate QR codes, retrieve random quotes, and much more.",
     "stacks": ["Nest.js", "mdBook", "MongoDB", "JWT", "QR"],
     "readMore": null,
     "isExternal": true
