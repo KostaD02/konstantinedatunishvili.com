@@ -1,14 +1,15 @@
 [
   {
     "name": "QuickInspect",
-    "description": "Alt + hover element inspector for Chrome. Selectors, Playwright locators, box model, styles, a11y and events without DevTools.",
+    "description": "Alt + hover element inspector for Chrome, no DevTools needed",
     "year": 2026,
     "made_at": null,
     "url": {
-      "github": "https://github.com/KostaD02/QuickInspect"
+      "github": "https://github.com/KostaD02/QuickInspect",
+      "live": "https://chromewebstore.google.com/detail/quickinspect/hgbhpnaeebhlnfmocmfgekfklcnmadno"
     },
     "stacks": ["CRXJS", "Chrome Extension"],
-    "show_in_noteworthy_projects": false
+    "show_in_noteworthy_projects": true
   },
   {
     "name": "CI",
@@ -112,7 +113,7 @@
       "github": "https://github.com/KostaD02/monotor"
     },
     "stacks": ["NX", "Angular", "Nest.js", "MongoDB", "Docker"],
-    "show_in_noteworthy_projects": true
+    "show_in_noteworthy_projects": false
   },
   {
     "name": "Cryptographic algorithms",
