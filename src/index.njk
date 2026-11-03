@@ -113,13 +113,13 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
         <article class="kd-feature kd-animate-fade-up {% if loop.index % 2 === 0 %}kd-feature--reverse{% endif %}" style="--kd-animate-duration: 1s;">
           <a
             href="{{ work.url }}"
-            target="{% if work.isExternal %} _blank {% else %} _self {% endif %}"
+            {%- if work.isExternal %} target="_blank" rel="noopener"{% endif %}
             class="kd-feature__media"
             aria-label="{{ work.title }}"
             style="background-image: url('{{ work.backgroundUrl }}')"></a>
           <aside class="kd-feature__content">
             <p class="kd-feature__eyebrow kd-lh-md">{{ work.type }}</p>
-            <a href="{{ work.url }}" target="{% if work.isExternal %} _blank {% else %} _self {% endif %}" class="kd-feature__title kd-lh-none">{{ work.title }}</a>
+            <a href="{{ work.url }}"{% if work.isExternal %} target="_blank" rel="noopener"{% endif %} class="kd-feature__title kd-lh-none">{{ work.title }}</a>
             <div class="kd-card kd-border-transparent kd-shadow-md" style="--kd-card-padding: var(--kd-space-4);">
               <p class="kd-card__text kd-fs-lg kd-lh-md">{{ work.description }}</p>
             </div>

@@ -28,6 +28,17 @@
     ]
   },
   {
+    "name": "Payever",
+    "position": "Front-End Developer",
+    "startDate": "Oct 2022",
+    "endDate": "Jan 2023",
+    "url": "https://payever.org/",
+    "descriptions": [
+      "Maintained CommerceOS, a monolithic e-commerce platform, across several apps simultaneously.",
+      "Documented the entire project architecture."
+    ]
+  },
+  {
     "name": "Freelance",
     "position": "Freelance projects",
     "startDate": "May 2021",

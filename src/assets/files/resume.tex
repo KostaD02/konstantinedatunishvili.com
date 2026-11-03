@@ -1,0 +1,116 @@
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+	a4paper,
+	11pt,
+]{resume}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+\pdfinterwordspaceon
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=blue,
+    pdftitle={Konstantine Datunishvili - Resume},
+    pdfauthor={Konstantine Datunishvili},
+    pdfpagemode=FullScreen,
+    }
+
+\name{Konstantine Datunishvili}
+
+\address{\href{https://konstantinedatunishvili.com/}{konstantinedatunishvili.com}}
+\address{\href{https://linkedin.com/in/kostad/}{linkedin.com/in/kostad} \\ \href{https://github.com/KostaD02/}{github.com/kostad02}}
+\address{\href{mailto:konstantine@datunishvili.ge}{konstantine@datunishvili.ge}}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	EDUCATION SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+	
+	\textbf{Batumi Shota Rustaveli State University} \hfill \textit{July 2024} \\ 
+	B.S. Computer Science
+	
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	LANGUAGES SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Languages}
+	\textbf{Georgian} (Native), \textbf{English} (Full Professional), \textbf{Russian} (Limited Working)
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	TECHNICAL STRENGTHS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Technical Strengths}
+
+	\begin{tabular}{@{} >{\bfseries}l @{\hspace{6ex}} l @{}}
+		Computer Languages & TypeScript, JavaScript, C++ \\
+		Frameworks \& Libraries & Angular, RxJS, Nx, NestJS, Express, SCSS, Eleventy, Cordova \\
+		Data \& Infrastructure & Node.js, MongoDB, Docker, GitHub Actions, Firebase \\
+		Tools & Git, VS Code, Storybook, Jasmine, Chrome Extensions API \\
+	\end{tabular}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Experience}
+
+	\begin{rSubsection}{eToro}{May 2024 - Present}{Senior Front-end Developer}{Tbilisi, Georgia}
+		\item Improving and maintaining one of the world's leading broker platforms.
+		\item Working back-to-back with designers, product managers, and analysts to deliver new features.
+		\item Delivering impactful A/B tests, neatly measured with analytics.
+		\item Developing extensible infra libraries used throughout the whole project.
+		\item Working with Cordova to deliver an efficient native application.
+		\item Writing internal documentation for library usage and maintenance.
+	\end{rSubsection}
+
+	\begin{rSubsection}{Payever}{October 2022 - January 2023}{Front-end Developer}{Remote}
+		\item Maintained CommerceOS, a monolithic e-commerce platform, across several apps simultaneously.
+		\item Documented the entire project architecture for the engineering team.
+	\end{rSubsection}
+
+	\begin{rSubsection}{IT Academy STEP}{September 2021 - September 2024}{Lecturer}{Tbilisi, Georgia}
+		\item Taught front-end fundamentals: HTML, CSS, SCSS, JavaScript, Angular, and RxJS.
+		\item Worked closely with management to improve the teaching process.
+		\item Completely revamped the front-end syllabus based on modern technology trends and demands.
+	\end{rSubsection}
+
+	\begin{rSubsection}{Freelancing}{May 2021 - May 2024}{Web Developer}{Remote}
+		\item Delivered and maintained full-stack software for clients in Georgia.
+	\end{rSubsection}
+
+\end{rSection}
+
+%----------------------------------------------------------------------------------------
+%	NOTABLE PROJECTS SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Notable Projects}
+	\begin{itemize}
+		\item \href{https://iswavle.com}{Iswavle} - A Georgian MDN alternative with a built-in code editor, built with Angular SSR.
+		\item \href{https://everrest.educata.dev/}{EverREST} - A free REST API that students use to build real front-ends. NestJS, MongoDB.
+		\item \href{https://chromewebstore.google.com/detail/mirrortab/bljopdbabofhephejfdlmclnjjipihpb}{MirrorTab} - Chrome extension that mirrors interactions from one tab to many in real time.
+		\item \href{https://github.com/KostaD02/steam-idler}{Steam Idler} - Self-hosted Nx monorepo with domain-layered Angular and NestJS libraries.
+	\end{itemize}
+\end{rSection}
+
+\end{document}
