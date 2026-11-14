@@ -1,31 +1,56 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>{% if title %}{{ title }} | {% endif %}Konstantine Datunishvili</title>
+  {%- set pageTitle = metaTitle | default(title + " | Konstantine Datunishvili" if title else "Konstantine Datunishvili") -%}
+  {%- set socialTitle = metaTitle | default(title | default("Konstantine Datunishvili - Portfolio")) -%}
+  {%- set pageDescription = description | default("Konstantine Datunishvili is a Senior Front-End Developer building Angular and Nx applications, with a blog about modern web development.") -%}
+  {%- set ogImage = image | default("/assets/images/logo_500x500.png") -%}
+  {%- if ".png" in ogImage -%}
+    {%- set ogImageSize = ogImage | imageSize -%}
+  {%- endif %}
+  <title>{{ pageTitle }}</title>
   <link rel="canonical" href="{{ consts.site }}{{ page.url | replace(".html", "") }}"/>
+  {%- if noindex %}
+  <meta name="robots" content="noindex,follow"/>
+  {%- endif %}
   <meta name="theme-color" content="#0a192f"/>
-  <meta name="description" content="{{ description | default('Personal Website') }}"/>
+  <meta name="description" content="{{ pageDescription }}"/>
   <meta property="og:type" content="{{ ogType | default('website') }}"/>
   <meta property="og:site_name" content="Konstantine Datunishvili"/>
   <meta property="og:locale" content="en_US"/>
   <meta property="og:url" content="{{ consts.site }}{{ page.url | replace(".html", "") }}"/>
-  <meta property="og:title" content="{{ title | default('Konstantine Datunishvili - Portfolio') }}"/>
-  <meta property="og:description" content="{{ description | default('Personal Website') }}"/>
-  <meta property="og:image" content="{{ consts.site }}{{ image | default('/assets/images/logo_500x500.png') }}"/>
+  <meta property="og:title" content="{{ socialTitle }}"/>
+  <meta property="og:description" content="{{ pageDescription }}"/>
+  <meta property="og:image" content="{{ consts.site }}{{ ogImage }}"/>
   <meta property="og:image:alt" content="{{ imageAlt | default('Konstantine Datunishvili') }}"/>
+  {%- if ogImageSize %}
+  <meta property="og:image:type" content="image/png"/>
+  <meta property="og:image:width" content="{{ ogImageSize.width }}"/>
+  <meta property="og:image:height" content="{{ ogImageSize.height }}"/>
+  {%- endif %}
+  {%- if ogType === "article" %}
+  <meta property="article:published_time" content="{{ page.date | isoDate }}"/>
+  {%- if updated %}
+  <meta property="article:modified_time" content="{{ updated | isoDate }}"/>
+  {%- endif %}
+  {%- endif %}
   <meta name="twitter:card" content="summary"/>
-  <meta name="twitter:title" content="{{ title | default('Konstantine Datunishvili - Portfolio') }}"/>
-  <meta name="twitter:description" content="{{ description | default('Personal Website') }}"/>
-  <meta name="twitter:image" content="{{ consts.site }}{{ image | default('/assets/images/logo_500x500.png') }}"/>
+  <meta name="twitter:title" content="{{ socialTitle }}"/>
+  <meta name="twitter:description" content="{{ pageDescription }}"/>
+  <meta name="twitter:image" content="{{ consts.site }}{{ ogImage }}"/>
   <meta name="twitter:image:alt" content="{{ imageAlt | default('Konstantine Datunishvili') }}"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin"/>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet"/>
+  {%- set fontHref = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Raleway:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" %}
+  <link rel="preload" as="style" href="{{ fontHref }}"/>
+  {# * Non-blocking stylesheet, media flips to all once the sheet has loaded #}
+  <link rel="stylesheet" href="{{ fontHref }}" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link rel="stylesheet" href="{{ fontHref }}"/>
+  </noscript>
   <link rel="icon" type="image/x-icon" href="/assets/icons/favicon.ico"/>
   <link rel="alternate" type="application/atom+xml" title="Konstantine Datunishvili - Blog" href="/feed.xml"/>
-  <link rel="stylesheet" href="/styles/style.css"/>
+  <link rel="stylesheet" href="{{ '/styles/style.css' | rev }}"/>
   {% include "schema.njk" %}
   <script>
     if ("IntersectionObserver" in window) {
