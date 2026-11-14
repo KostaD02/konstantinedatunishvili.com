@@ -1,55 +1,86 @@
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const BASE_URL = "https://konstantinedatunishvili.com";
+const REPO_DIR = path.join(__dirname, "..");
+const SRC_DIR = path.join(REPO_DIR, "src");
+const GIT_OPTIONS = { cwd: REPO_DIR, encoding: "utf-8", stdio: ["ignore", "pipe", "ignore"] };
 
 const routesMap = new Map();
+
+// ! A shallow clone dates every file to HEAD, so lastmod is dropped rather than stamped with the deploy date
+const hasFullHistory = (() => {
+  try {
+    return execFileSync("git", ["rev-parse", "--is-shallow-repository"], GIT_OPTIONS).trim() === "false";
+  } catch {
+    return false;
+  }
+})();
+
+// * Newest git commit date of the given source files, "" when it cannot be derived
+function lastCommitDate(files) {
+  let newest = "";
+
+  if (!hasFullHistory) {
+    return newest;
+  }
+
+  for (const file of files) {
+    try {
+      const date = execFileSync("git", ["log", "-1", "--format=%cs", "--", file], GIT_OPTIONS).trim();
+
+      if (date > newest) {
+        newest = date;
+      }
+    } catch {
+      // ? No git history available, the field is omitted rather than faked
+    }
+  }
+
+  return newest;
+}
 
 // * Predefined static routes
 
 routesMap.set("/", {
   priority: 1.0,
-  changefreq: "weekly",
+  lastMod: lastCommitDate([
+    path.join(SRC_DIR, "index.njk"),
+    path.join(SRC_DIR, "_data", "consts.json"),
+    path.join(SRC_DIR, "_data", "experiences.json"),
+    path.join(SRC_DIR, "_data", "projects.json"),
+    path.join(SRC_DIR, "_data", "skills.json"),
+    path.join(SRC_DIR, "_data", "urls.json"),
+    path.join(SRC_DIR, "_data", "works.json"),
+  ]),
 });
 
 routesMap.set("/assets/files/resume.pdf", {
-  priority: 0.9,
-  changefreq: "weekly",
+  priority: 0.7,
+  lastMod: lastCommitDate([path.join(SRC_DIR, "assets", "files", "resume.pdf")]),
 });
 
 routesMap.set("/blog", {
   priority: 0.9,
-  changefreq: "weekly",
 });
 
 routesMap.set("/archive", {
   priority: 0.8,
-  changefreq: "weekly",
+  lastMod: lastCommitDate([
+    path.join(SRC_DIR, "archive.njk"),
+    path.join(SRC_DIR, "_data", "projects.json"),
+  ]),
 });
 
 routesMap.set("/qr-project", {
   priority: 0.7,
-  changefreq: "yearly",
   lastMod: "2024-08-04",
 });
 
-function parseTags(fileContent) {
-  const block = fileContent.match(/^tags:\n((?:\s+-\s*.+\n)+)/m);
-
-  if (!block) {
-    return [];
-  }
-
-  return block[1]
-    .split("\n")
-    .map((line) => line.replace(/^\s*-\s*/, "").trim())
-    .filter((tag) => tag && tag !== "post");
-}
-
 function fillArticlesRoutes() {
-  const articlesDir = path.join(__dirname, "..", "src", "blog");
+  const articlesDir = path.join(SRC_DIR, "blog");
   const articleFiles = fs.readdirSync(articlesDir);
-  const tags = new Set();
   let newestArticle = "";
 
   for (const file of articleFiles) {
@@ -60,27 +91,14 @@ function fillArticlesRoutes() {
       const lastMod = match ? match[1] : "";
       const route = `/blog/${path.basename(file, ".md")}/`;
 
-      for (const tag of parseTags(fileContent)) {
-        tags.add(tag.toLowerCase());
-      }
-
       routesMap.set(route, {
         lastMod,
         priority: 0.8,
-        changefreq: "weekly",
       });
       if (lastMod > newestArticle) {
         newestArticle = lastMod;
       }
     }
-  }
-
-  for (const tag of tags) {
-    routesMap.set(`/tags/${tag}`, {
-      lastMod: newestArticle,
-      priority: 0.6,
-      changefreq: "weekly",
-    });
   }
 
   return newestArticle;
@@ -93,10 +111,10 @@ async function main() {
   let content = "";
   for (const [route, info] of routesMap) {
     const lastMod = info.lastMod ? `<lastmod>${info.lastMod}</lastmod>` : "";
-    content += `<url><loc>${BASE_URL}${route}</loc>${lastMod}<changefreq>${info.changefreq}</changefreq><priority>${info.priority}</priority></url>`;
+    content += `<url><loc>${BASE_URL}${route}</loc>${lastMod}<priority>${info.priority}</priority></url>`;
   }
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${content}</urlset>`;
-  fs.writeFileSync(path.join(__dirname, "..", "src", "sitemap.xml"), sitemap);
+  fs.writeFileSync(path.join(SRC_DIR, "sitemap.xml"), sitemap);
 }
 
 main();

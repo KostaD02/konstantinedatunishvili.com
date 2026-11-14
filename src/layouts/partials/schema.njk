@@ -9,7 +9,7 @@
       "jobTitle": {{ consts.jobTitle | dump | safe }},
       "email": {{ ("mailto:" + consts.email) | dump | safe }},
       "url": {{ consts.site | dump | safe }},
-      "image": {{ (consts.site + "/assets/images/personal_image.png") | dump | safe }},
+      "image": {{ (consts.site + "/assets/images/personal_image.jpg") | dump | safe }},
       "sameAs": [
         {{ consts.url.github | dump | safe }},
         {{ consts.url.linkedin | dump | safe }},
@@ -21,6 +21,48 @@
         "name": {{ experiences[0].name | dump | safe }},
         "url": {{ experiences[0].url | dump | safe }}
       }
+    }
+  </script>
+{% elif page.url === '/blog.html' %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "@id": {{ (consts.site + "/blog#blog") | dump | safe }},
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ (consts.site + "/blog") | dump | safe }}
+      },
+      "name": "Konstantine Datunishvili - Blog",
+      "description": {{ description | dump | safe }},
+      "url": {{ (consts.site + "/blog") | dump | safe }},
+      "inLanguage": "en",
+      "author": {
+        "@type": "Person",
+        "@id": {{ (consts.site + "/#person") | dump | safe }},
+        "name": {{ consts.name | dump | safe }},
+        "url": {{ consts.site | dump | safe }}
+      },
+      "publisher": {
+        "@type": "Person",
+        "@id": {{ (consts.site + "/#person") | dump | safe }},
+        "name": {{ consts.name | dump | safe }}
+      },
+      "blogPost": [{% for post in collections.post | reverse %}
+        {
+          "@type": "BlogPosting",
+          "headline": {{ post.data.title | dump | safe }},
+          "description": {{ post.data.description | dump | safe }},
+          "url": {{ (consts.site + "/blog/" + post.page.fileSlug + "/") | dump | safe }},
+          "image": {{ (consts.site + post.data.image) | dump | safe }},
+          "datePublished": {{ post.page.date | isoDate | dump | safe }},
+          "dateModified": {{ (post.data.updated | default(post.page.date)) | isoDate | dump | safe }},
+          "author": {
+            "@type": "Person",
+            "@id": {{ (consts.site + "/#person") | dump | safe }}
+          }
+        }{% if not loop.last %},{% endif %}{% endfor %}
+      ]
     }
   </script>
 {% elif schemaType === "BlogPosting" %}
@@ -36,9 +78,12 @@
       "description": {{ description | dump | safe }},
       "image": {{ (consts.site + image) | dump | safe }},
       "datePublished": {{ page.date | isoDate | dump | safe }},
-      "dateModified": {{ page.date | isoDate | dump | safe }},
+      "dateModified": {{ (updated | default(page.date)) | isoDate | dump | safe }},
       "keywords": [{% for chip in chips %}{{ chip | dump | safe }}{% if not loop.last %}, {% endif %}{% endfor %}],
       "inLanguage": "en",
+      "isPartOf": {
+        "@id": {{ (consts.site + "/blog#blog") | dump | safe }}
+      },
       "author": {
         "@type": "Person",
         "@id": {{ (consts.site + "/#person") | dump | safe }},
@@ -50,6 +95,31 @@
         "@id": {{ (consts.site + "/#person") | dump | safe }},
         "name": {{ consts.name | dump | safe }}
       }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": {{ (consts.site + "/") | dump | safe }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": {{ (consts.site + "/blog") | dump | safe }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ title | dump | safe }}
+        }
+      ]
     }
   </script>
 {% endif %}

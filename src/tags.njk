@@ -1,7 +1,6 @@
 ---
 layout: "base.njk"
-title: Blog
-description: "Browse blog posts"
+noindex: true
 pagination:
   data: collections
   size: 1
@@ -10,10 +9,13 @@ pagination:
     - all
     - post
 permalink: /tags/{{ tag | lower }}.html
+eleventyComputed:
+  title: 'Posts tagged "{{ tag }}"'
+  description: 'Every post on konstantinedatunishvili.com tagged {{ tag }}, covering front-end development, Angular, Nx and the web.'
 ---
 
 <section class="kd-section kd-measure-xxxl">
-  <h1 class="kd-fw-medium">Blog</h1>
+  <h1 class="kd-fw-medium">Posts tagged “{{ tag }}”</h1>
   {% include "tag-list.njk" %}
   <div class="kd-d-flex kd-flex-column kd-gap-5 kd-mt-5">
     {%- for post in collections[tag] | reverse -%}

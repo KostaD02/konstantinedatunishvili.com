@@ -1,5 +1,6 @@
 ---
 layout: "base.njk"
+metaTitle: "Konstantine Datunishvili - Senior Front-End Developer"
 description: "Konstantine Datunishvili - Senior Front-End Developer, educator and tech enthusiast. Angular, Nx and full-stack work, plus a blog about modern web development."
 ---
 
@@ -50,7 +51,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
       <figure class="kd-frame">
         <img
           class="kd-h-auto"
-          src="./assets/images/personal_image.png"
+          src="./assets/images/personal_image.jpg"
           alt="Konstantine Datunishvili"
           width="300"
           height="300"/>
@@ -129,7 +130,7 @@ description: "Konstantine Datunishvili - Senior Front-End Developer, educator an
               {% endfor %}
             </ul>
             {% if work.readMore %}
-              <a class="kd-link" href="{{ work.readMore }}">Read more</a>
+              <a class="kd-link" href="{{ work.readMore }}">Read more about {{ work.title }}</a>
             {% endif %}
           </aside>
         </article>

@@ -1,12 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 const eleventySass = require("eleventy-sass");
+const pluginRev = require("eleventy-plugin-rev");
 const markdownIt = require("markdown-it");
 const markdownAnchor = require("markdown-it-anchor");
 const markdownItHighlight = require("markdown-it-highlightjs");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(pluginRev);
   eleventyConfig.addPlugin(eleventySass, {
+    rev: true,
     sass: {
       loadPaths: ["node_modules"],
       charset: false,
@@ -16,7 +19,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/scripts");
   eleventyConfig.addPassthroughCopy({
-    "node_modules/@kostad/brand/dist/kostad-brand.min.js": "scripts/kostad-brand.min.js",
+    "node_modules/@kostad/brand/dist/kostad-brand.min.js":
+      "scripts/kostad-brand.min.js",
   });
 
   eleventyConfig.addPassthroughCopy("src/robots.txt");
